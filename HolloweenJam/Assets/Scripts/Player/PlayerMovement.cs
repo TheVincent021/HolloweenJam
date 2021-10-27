@@ -5,8 +5,9 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Fields
     [SerializeField] float speed = 5f;
-    [SerializeField] RoundRobin footsteps;
+    [SerializeField] float stepDelay = 0.3f;
     Vector2 movement;
+    float nextStep = 0f;
 
     Rigidbody2D m_rigidbody;
     #endregion
@@ -38,7 +39,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void PlayFootsteps () {
-        if (movement != Vector2.zero)
-            SoundManager.instance.PlayerSourcePlayRR(footsteps, footsteps.Delay);
+        if (movement != Vector2.zero) {
+            if (Time.time > nextStep) {
+                SoundManager.instance.Play("Footsteps");
+                nextStep = Time.time + stepDelay;
+            }
+        } else {
+            nextStep = 0;
+        }
     }
 }

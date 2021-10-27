@@ -40,6 +40,10 @@ public class EnemyAnimator : MonoBehaviour
         }
     }
 
+    public void Damage () {
+        m_animator.SetTrigger("Damage");
+    }
+
     void OnDisable () {
         m_animator.SetTrigger("Died");
     }

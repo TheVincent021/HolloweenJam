@@ -115,4 +115,8 @@ public class PlayerAnimator : MonoBehaviour
     void GunPositionFix () {
         m_graphics.sortingOrder = lastMoveDirection == Direction.Up ? 2 : 0;
     }
+
+    public void Damage () {
+        m_animator.SetTrigger("Damage");
+    }
 }

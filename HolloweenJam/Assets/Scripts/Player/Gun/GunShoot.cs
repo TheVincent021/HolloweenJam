@@ -40,8 +40,9 @@ public class GunShoot : MonoBehaviour
     }
 
     void ShootEffects() {
+        Camera.main.GetComponent<CameraShake>().Shake(0.1f, 0.1f);
         Instantiate(muzzleFlash, barrelEnd.position, muzzleFlash.transform.rotation);
-        SoundManager.instance.PlayerSourcePlayRR(shotEffects, shotEffects.Delay);
+        SoundManager.instance.Play("GunShots");
     }
 
     IEnumerator Cooldown () {
@@ -53,6 +54,7 @@ public class GunShoot : MonoBehaviour
     IEnumerator Reload () {
         isReady = false;
         isReloading = true;
+        SoundManager.instance.Play("Reload");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = clipCapacity;
         isReady = true;
