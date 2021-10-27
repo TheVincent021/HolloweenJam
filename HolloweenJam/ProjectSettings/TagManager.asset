@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Barrel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
-  - 
-  - 
+  - HitBox
+  - Bullet
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Below
+    uniqueID: 4068550187
     locked: 0
   - name: Player
     uniqueID: 4004281827
