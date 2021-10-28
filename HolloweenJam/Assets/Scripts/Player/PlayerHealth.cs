@@ -24,9 +24,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     public void Damage (int damage) {
         if (!isRecovering) {
+            
             if (health > 1) {
                 StartCoroutine(Recovery());
                 health--;
+                PlayPlayerPain();
             }
             else Die();
             m_animator.Damage();
@@ -48,5 +50,9 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Destroy(GetComponent<PlayerInput>());
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(this);
+    }
+    void PlayPlayerPain()
+    {
+        SoundManager.instance.Play("Player_Pain");
     }
 }
