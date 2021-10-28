@@ -2,7 +2,7 @@ using System.Collections;
 using Pathfinding;
 using UnityEngine;
 
-public class EnemyHealthAndAttack : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     #region Fields
     [SerializeField] int health = 4;
@@ -16,10 +16,6 @@ public class EnemyHealthAndAttack : MonoBehaviour
     #region Callbacks
     void Awake () {
         MakeReferences();
-    }
-
-    void Update () {
-        Attack();
     }
     #endregion
 
@@ -49,29 +45,11 @@ public class EnemyHealthAndAttack : MonoBehaviour
     }
 
     void Die () {
-        DisablePathfinding();
         m_animator.Die();
         Destroy(m_animator);
+        GetComponentInParent<EnemyAttack>().attack = false;
         transform.parent.gameObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Below";
         StartCoroutine(DestroyCollider());
-    }
-
-    void Attack () {
-        if (player.GetComponent<PlayerHealth>() != null) {
-            if (Vector3.Distance(transform.position, player.position) <= attackRange)
-                player.GetComponent<PlayerHealth>().Damage(damage);
-        } else {
-            PlayerIsDead();
-        }
-    }
-
-    void PlayerIsDead () {
-        DisablePathfinding();
-        m_animator.Idle();
-    }
-
-    void DisablePathfinding () {
-        GetComponentInParent<AIDestinationSetter>().target = transform.parent;
     }
 
     IEnumerator DestroyCollider () {

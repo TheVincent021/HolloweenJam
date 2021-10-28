@@ -10,7 +10,7 @@ public class EnemyAnimator : MonoBehaviour
     Animator m_animator;
     AIPath aiPath;
     AIDestinationSetter aiDestination;
-    Transform player;
+    Transform target;
     #endregion
 
     #region Callbacks
@@ -27,14 +27,18 @@ public class EnemyAnimator : MonoBehaviour
         m_animator = GetComponent<Animator>();
         aiPath = GetComponentInParent<AIPath>();
         aiDestination = GetComponentInParent<AIDestinationSetter>();
-        player = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("Player").transform;
     }
 
     void AnimateMovement () {
-        if (aiDestination.target == player && !isMoving)
-            Move();
+        target = GetComponentInParent<EnemyAttack>().currentTarget;
 
-        var direction = (player.position - transform.position).normalized;
+        if (target != null && aiDestination.target != transform.parent && !isMoving)
+            Move();
+        else if (aiDestination.target == transform.parent)
+            Idle();
+
+        var direction = (target.position - transform.position).normalized;
         if (isMoving) {
             if (direction.x > 0f && direction.x > Mathf.Abs(direction.y)) {
                 m_animator.Play("MoveRight");

@@ -11,8 +11,6 @@ public class PlayerAnimator : MonoBehaviour
 {
     #region Fields
     public Direction lastMoveDirection;
-    [SerializeField] Transform followerPos;
-    [SerializeField] Vector3[] followerPositions;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -34,7 +32,6 @@ public class PlayerAnimator : MonoBehaviour
     void Update () {
         GetInput();
         Animate();
-        FixFollowerPosition();
     }
     #endregion
 
@@ -111,18 +108,6 @@ public class PlayerAnimator : MonoBehaviour
                 else if (lastMoveDirection == Direction.Right) m_animator.Play("RightIdle");
                 else if (lastMoveDirection == Direction.Left) m_animator.Play("LeftIdle");
             }
-        }
-    }
-
-    void FixFollowerPosition () {
-        if (lastMoveDirection == Direction.Up) {
-            followerPos.localPosition = followerPositions[0];
-        } else if (lastMoveDirection == Direction.Left) {
-            followerPos.localPosition = followerPositions[1];
-        } else if (lastMoveDirection == Direction.Down) {
-            followerPos.localPosition = followerPositions[2];
-        } else if (lastMoveDirection == Direction.Right) {
-            followerPos.localPosition = followerPositions[3];
         }
     }
 

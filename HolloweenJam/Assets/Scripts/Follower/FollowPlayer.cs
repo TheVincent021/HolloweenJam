@@ -5,8 +5,9 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] float stopDistance = 0.25f;
 
+    AIPath aiPath;
     AIDestinationSetter aiDestination;
-    Transform followPos;
+    Transform player;
 
     void Awake () {
         MakeReferences();
@@ -17,15 +18,16 @@ public class FollowPlayer : MonoBehaviour
     }
 
     void MakeReferences () {
+        aiPath = GetComponent<AIPath>();
         aiDestination = GetComponent<AIDestinationSetter>();
-        followPos = GameObject.FindWithTag("FollowerPos").transform;
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void StopNearTarget () {
-        if (Vector3.Distance(transform.position, followPos.position) <= stopDistance) {
+        if (Vector3.Distance(transform.position, player.position) <= stopDistance) {
             aiDestination.target = transform;
         } else {
-            aiDestination.target = followPos;
+            aiDestination.target = player;
         }
     }
 }

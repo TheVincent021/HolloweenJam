@@ -1,15 +1,15 @@
 using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IHealth
+public class FollowerHealth : MonoBehaviour, IHealth
 {
     #region Fields
-    [SerializeField] int health = 5;
+    [SerializeField] int health = 2;
     [SerializeField] float recoveryTime = 1f;
-    [SerializeField] GameObject gun;
     public bool isRecovering = false;
 
-    PlayerAnimator m_animator;
+    FollowerAnimator m_animator;
     #endregion
 
     #region Callbacks
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     #endregion
 
     void MakeReferences () {
-        m_animator = GetComponentInChildren<PlayerAnimator>();
+        m_animator = GetComponentInChildren<FollowerAnimator>();
     }
 
     public void Damage (int damage) {
@@ -30,7 +30,6 @@ public class PlayerHealth : MonoBehaviour, IHealth
             }
             else Die();
             m_animator.Damage();
-            Camera.main.GetComponent<CameraShake>().Shake(0.15f, 0.15f);
         }
     }
 
@@ -42,11 +41,10 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     public void Die () {
         m_animator.Die();
-        Destroy(gun);
         Destroy(m_animator);
-        Destroy(GetComponent<PlayerMovement>());
-        Destroy(GetComponent<PlayerInput>());
-        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<FollowPlayer>());
+        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Below";
+        GetComponent<AIDestinationSetter>().target = transform;
         Destroy(this);
     }
 }
