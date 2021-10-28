@@ -21423,11 +21423,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099918666382649665, guid: 9b954b453c7cdbb40b5581e3cb47124b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 3099918666382649665, guid: 9b954b453c7cdbb40b5581e3cb47124b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3099918666382649665, guid: 9b954b453c7cdbb40b5581e3cb47124b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21734,13 +21734,13 @@ MonoBehaviour:
     isLoop: 0
     source: {fileID: 0}
   - name: Follower_Death
-    clip: {fileID: 8300000, guid: 52a950f607e4fdc43b428ac55486c039, type: 3}
+    clip: {fileID: 8300000, guid: fbad20e2b0f8c3e41b3bc45489b9cc0a, type: 3}
     volume: 1
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
   - name: Player_Death
-    clip: {fileID: 8300000, guid: 52a950f607e4fdc43b428ac55486c039, type: 3}
+    clip: {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
     volume: 1
     pitch: 1
     isLoop: 0
@@ -21799,6 +21799,17 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: Follower_Pain
+    clips:
+    - {fileID: 8300000, guid: 2dd5141a3829e3f46ac385eb49547ae3, type: 3}
+    - {fileID: 8300000, guid: 8152fb18a0521f1498a26eb6dc5009bb, type: 3}
+    - {fileID: 8300000, guid: a0117c3be51b4ca4386ec3e8d5c2579c, type: 3}
+    - {fileID: 8300000, guid: b008b4ca9ffd719479b9c5bba9ad5bed, type: 3}
+    - {fileID: 8300000, guid: 358ec9d978f493946a2d0d603a0473a4, type: 3}
+    - {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1001 &1903204954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21832,11 +21843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099918666382649665, guid: 9b954b453c7cdbb40b5581e3cb47124b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3099918666382649665, guid: 9b954b453c7cdbb40b5581e3cb47124b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3099918666382649665, guid: 9b954b453c7cdbb40b5581e3cb47124b, type: 3}
       propertyPath: m_LocalPosition.z

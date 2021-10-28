@@ -27,6 +27,7 @@ public class FollowerHealth : MonoBehaviour, IHealth
             if (health > 1) {
                 StartCoroutine(Recovery());
                 health--;
+                m_animator.Damage();
                 SoundManager.instance.Play("Follower_Pain");
             }
             else 

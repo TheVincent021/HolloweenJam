@@ -69,13 +69,12 @@ public class EnemyHealth : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void PlayGhoulPain()
-{
-    SoundManager.instance.Play("Ghoul_Pain");
-}
-    void PlayGhoulDeath()
-{
-    SoundManager.instance.Play("Ghoul_Death");
-}
+    void PlayGhoulPain() {
+        SoundManager.instance.Play("Ghoul_Pain");
+    }
+
+    void PlayGhoulDeath() {
+        SoundManager.instance.Play("Ghoul_Death");
+    }
 
 }
