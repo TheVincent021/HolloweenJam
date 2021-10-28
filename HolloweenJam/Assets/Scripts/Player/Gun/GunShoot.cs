@@ -23,6 +23,7 @@ public class GunShoot : MonoBehaviour
 
     void Initialization () {
         PlayerInput.actions.Default.Shoot.performed += Shoot;
+        PlayerInput.actions.Default.Reload.performed += Reload;
         currentAmmo = clipCapacity;
     }
 
@@ -34,15 +35,19 @@ public class GunShoot : MonoBehaviour
                 Instantiate(bullet, barrelEnd.position, barrelEnd.rotation);
                 StartCoroutine(Cooldown());
             } else {
-                StartCoroutine(Reload());
+                StartCoroutine(StartReload());
             }
         }
     }
 
     void ShootEffects() {
         Camera.main.GetComponent<CameraShake>().Shake(0.1f, 0.1f);
-        Instantiate(muzzleFlash, barrelEnd.position, muzzleFlash.transform.rotation);
+        Instantiate(muzzleFlash, barrelEnd.position, barrelEnd.rotation);
         SoundManager.instance.Play("GunShots");
+    }
+
+    void Reload (InputAction.CallbackContext ctx) {
+        StartCoroutine(StartReload());
     }
 
     IEnumerator Cooldown () {
@@ -51,13 +56,20 @@ public class GunShoot : MonoBehaviour
         isReady = true;
     }
 
-    IEnumerator Reload () {
-        isReady = false;
-        isReloading = true;
-        SoundManager.instance.Play("Reload");
-        yield return new WaitForSeconds(reloadTime);
-        currentAmmo = clipCapacity;
-        isReady = true;
-        isReloading = false;
+    IEnumerator StartReload() {
+        if (isReady == true && currentAmmo < clipCapacity) {
+            isReady = false;
+            isReloading = true;
+            SoundManager.instance.Play("Reload");
+            yield return new WaitForSeconds(reloadTime);
+            currentAmmo = clipCapacity;
+            isReady = true;
+            isReloading = false;
+        }
+    }
+
+    void OnDisable () {
+        PlayerInput.actions.Default.Shoot.performed -= Shoot;
+        PlayerInput.actions.Default.Reload.performed -= Reload;
     }
 }

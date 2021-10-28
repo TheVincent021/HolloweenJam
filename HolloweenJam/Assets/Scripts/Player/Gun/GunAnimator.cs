@@ -6,6 +6,8 @@ public class GunAnimator : MonoBehaviour
     #region Fields
     [SerializeField] Sprite horizontalArm;
     [SerializeField] Sprite verticalArm;
+    [SerializeField] Transform barrelEnd;
+    [SerializeField] Vector3[] barrelEndPositions;
     [SerializeField] PlayerAnimator playerAnimator;
 
     Transform m_transform;
@@ -25,6 +27,8 @@ public class GunAnimator : MonoBehaviour
 
     void Update () {
         Animate();
+        FixBarrelEndPosition();
+        GunSortingFix();
     }
     #endregion
 
@@ -51,8 +55,26 @@ public class GunAnimator : MonoBehaviour
         m_graphics.flipY = playerAnimator.lastMoveDirection == Direction.Left ? true : false;
     }
 
+    void FixBarrelEndPosition () {
+        if (playerAnimator.lastMoveDirection == Direction.Up || playerAnimator.lastMoveDirection == Direction.Down) {
+            barrelEnd.localPosition = barrelEndPositions[0];
+        } else if (playerAnimator.lastMoveDirection == Direction.Left) {
+            barrelEnd.localPosition = barrelEndPositions[1];
+        } else if (playerAnimator.lastMoveDirection == Direction.Right) {
+            barrelEnd.localPosition = barrelEndPositions[2];
+        }
+    }
+
     void TriggerShoot (InputAction.CallbackContext ctx) {
         if (m_gun.isReady)
             m_animator.SetTrigger("Shoot");
+    }
+
+    void GunSortingFix () {
+        m_graphics.sortingOrder = playerAnimator.lastMoveDirection == Direction.Up ? -1 : 1;
+    }
+
+    void OnDisable () {
+        PlayerInput.actions.Default.Shoot.performed -= TriggerShoot;
     }
 }

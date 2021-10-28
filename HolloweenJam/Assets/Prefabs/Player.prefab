@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &393624664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 393624665}
+  m_Layer: 0
+  m_Name: FollowerPos
+  m_TagString: FollowerPos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &393624665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393624664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.74300003, y: 0.03400004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9153064675297495798}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9153064675297495797
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +43,7 @@ GameObject:
   - component: {fileID: 9153064675297495784}
   - component: {fileID: 9153064675297495786}
   - component: {fileID: 9153064675297495785}
+  - component: {fileID: 1866806853}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33,6 +64,7 @@ Transform:
   m_Children:
   - {fileID: 9153064675483767846}
   - {fileID: 9153064676324710016}
+  - {fileID: 393624665}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,15 +130,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  footsteps:
-    clips:
-    - {fileID: 8300000, guid: 26833d2b0a41ae64ea64a85be1dc6dc9, type: 3}
-    - {fileID: 8300000, guid: 40fd32f567a80294a887e546ae1346a3, type: 3}
-    - {fileID: 8300000, guid: 6aaec71505e058b418cc6c2868b47ae4, type: 3}
-    - {fileID: 8300000, guid: 0a46ca4f9a5b0cc40bd129bd86db71a3, type: 3}
-    - {fileID: 8300000, guid: 68944e2a6a67af94f8be6e85e854a0f3, type: 3}
-    - {fileID: 8300000, guid: c9909ab93401aa648abbbfbb0cda976b, type: 3}
-    delay: 0.3
+  stepDelay: 0.3
+--- !u!114 &1866806853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9153064675297495797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0d5b89c5eeed740b026c60e67f0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  recoveryTime: 1
+  gun: {fileID: 9153064675483767845}
+  isRecovering: 0
 --- !u!1 &9153064675483767845
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +189,7 @@ GameObject:
   - component: {fileID: 9153064675500895572}
   m_Layer: 0
   m_Name: BarrelEnd
-  m_TagString: Untagged
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +301,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -290685469
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 6619794858780462298, guid: e2196f111827d3047ada414915387b86, type: 3}
   m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
@@ -288,6 +328,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalArm: {fileID: 6619794858780462298, guid: e2196f111827d3047ada414915387b86, type: 3}
   verticalArm: {fileID: -4510514087643931387, guid: 0d552334f21ae42449d57e1d27be9c07, type: 3}
+  barrelEnd: {fileID: 9153064675500895572}
+  barrelEndPositions:
+  - {x: 0.244, y: 0.009, z: 0}
+  - {x: 0.327, y: -0.036, z: 0}
+  - {x: 0.321, y: 0.025, z: 0}
   playerAnimator: {fileID: 9153064676324710019}
 --- !u!114 &9153064675522007513
 MonoBehaviour:
@@ -324,12 +369,15 @@ MonoBehaviour:
   clipCapacity: 6
   reloadTime: 0.9166667
   shotEffects:
+    name: 
     clips:
     - {fileID: 8300000, guid: 29a21b8eedffeab4eb57013364c1e411, type: 3}
     - {fileID: 8300000, guid: c8788596b78ca25438891930bf9a4dfb, type: 3}
     - {fileID: 8300000, guid: 5a07cedc450ab554fad6c4021726e3e5, type: 3}
     - {fileID: 8300000, guid: c11a07c2006f40c44895274e022bd37f, type: 3}
-    delay: 0
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
   currentAmmo: 0
 --- !u!1 &9153064676324710031
 GameObject:
@@ -421,7 +469,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -290685469
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1963973374559954210, guid: 67ebb1ae85d6d5e4dae6d4fce9ace1d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -35,6 +35,14 @@ public class PlayerActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""019bf170-de49-44e7-b1d2-e18d615ecbb6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""MousePosition"",
                     ""type"": ""Value"",
                     ""id"": ""3b2c1aac-8474-4dd5-beed-dcd0a5eaf5f8"",
@@ -175,6 +183,17 @@ public class PlayerActions : IInputActionCollection, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20fd8bb3-2ef3-49d1-8b48-01281eb5095a"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -202,6 +221,7 @@ public class PlayerActions : IInputActionCollection, IDisposable
         m_Default = asset.FindActionMap("Default", throwIfNotFound: true);
         m_Default_Movement = m_Default.FindAction("Movement", throwIfNotFound: true);
         m_Default_Shoot = m_Default.FindAction("Shoot", throwIfNotFound: true);
+        m_Default_Reload = m_Default.FindAction("Reload", throwIfNotFound: true);
         m_Default_MousePosition = m_Default.FindAction("MousePosition", throwIfNotFound: true);
     }
 
@@ -254,6 +274,7 @@ public class PlayerActions : IInputActionCollection, IDisposable
     private IDefaultActions m_DefaultActionsCallbackInterface;
     private readonly InputAction m_Default_Movement;
     private readonly InputAction m_Default_Shoot;
+    private readonly InputAction m_Default_Reload;
     private readonly InputAction m_Default_MousePosition;
     public struct DefaultActions
     {
@@ -261,6 +282,7 @@ public class PlayerActions : IInputActionCollection, IDisposable
         public DefaultActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Default_Movement;
         public InputAction @Shoot => m_Wrapper.m_Default_Shoot;
+        public InputAction @Reload => m_Wrapper.m_Default_Reload;
         public InputAction @MousePosition => m_Wrapper.m_Default_MousePosition;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
@@ -277,6 +299,9 @@ public class PlayerActions : IInputActionCollection, IDisposable
                 @Shoot.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnShoot;
+                @Reload.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
                 @MousePosition.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMousePosition;
@@ -290,6 +315,9 @@ public class PlayerActions : IInputActionCollection, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
@@ -310,6 +338,7 @@ public class PlayerActions : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
     }
 }

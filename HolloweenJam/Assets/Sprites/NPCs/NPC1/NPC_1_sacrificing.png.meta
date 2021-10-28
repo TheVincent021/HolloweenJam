@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 0d2a49ac276d5384fb4c73400b138c59
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8031819256913322621
+    second: NPC_1_sacrificing_0
+  - first:
+      213: -8491768545269847799
+    second: NPC_1_sacrificing_1
+  - first:
+      213: -5390493316945412816
+    second: NPC_1_sacrificing_2
+  - first:
+      213: 1534339196092846598
+    second: NPC_1_sacrificing_3
+  - first:
+      213: -8931293162872171263
+    second: NPC_1_sacrificing_4
+  - first:
+      213: -5981902698344927098
+    second: NPC_1_sacrificing_5
+  - first:
+      213: 202004740247969413
+    second: NPC_1_sacrificing_6
+  - first:
+      213: 9035361291800830316
+    second: NPC_1_sacrificing_7
+  - first:
+      213: -5893436502624781203
+    second: NPC_1_sacrificing_8
+  - first:
+      213: 3741590276929038360
+    second: NPC_1_sacrificing_9
+  - first:
+      213: -4103915170517622237
+    second: NPC_1_sacrificing_10
+  - first:
+      213: -1397077707330937792
+    second: NPC_1_sacrificing_11
+  - first:
+      213: 1697030336790306035
+    second: NPC_1_sacrificing_12
+  - first:
+      213: 8224016875495672294
+    second: NPC_1_sacrificing_13
+  - first:
+      213: -6035059365998291040
+    second: NPC_1_sacrificing_14
+  - first:
+      213: -4050243886849919989
+    second: NPC_1_sacrificing_15
+  - first:
+      213: -4211102490956342052
+    second: NPC_1_sacrificing_16
+  - first:
+      213: 2014110515411178700
+    second: NPC_1_sacrificing_17
+  - first:
+      213: 7862452091641519659
+    second: NPC_1_sacrificing_18
+  - first:
+      213: -1941826366206673007
+    second: NPC_1_sacrificing_19
+  - first:
+      213: -7220707573954694300
+    second: NPC_1_sacrificing_20
+  - first:
+      213: 505214645782685853
+    second: NPC_1_sacrificing_21
+  - first:
+      213: 8621633287431963998
+    second: NPC_1_sacrificing_22
+  - first:
+      213: -2630640685243324242
+    second: NPC_1_sacrificing_23
+  - first:
+      213: -7091512399959063081
+    second: NPC_1_sacrificing_24
+  - first:
+      213: 4377028241905819018
+    second: NPC_1_sacrificing_25
+  - first:
+      213: 8950113263153771295
+    second: NPC_1_sacrificing_26
+  - first:
+      213: 6102714866941205614
+    second: NPC_1_sacrificing_27
+  - first:
+      213: -7320397743133333186
+    second: NPC_1_sacrificing_28
+  - first:
+      213: 5818513954505336781
+    second: NPC_1_sacrificing_29
+  - first:
+      213: -7692028729941967699
+    second: NPC_1_sacrificing_30
+  - first:
+      213: 7373658815983969321
+    second: NPC_1_sacrificing_31
+  - first:
+      213: -456464154179318914
+    second: NPC_1_sacrificing_32
+  - first:
+      213: -3638224481428535247
+    second: NPC_1_sacrificing_33
+  - first:
+      213: -1134396609688252365
+    second: NPC_1_sacrificing_34
+  - first:
+      213: 5537495262763762279
+    second: NPC_1_sacrificing_35
+  - first:
+      213: 3078334712097124580
+    second: NPC_1_sacrificing_36
+  - first:
+      213: 7473879019842546058
+    second: NPC_1_sacrificing_37
+  - first:
+      213: 3997075229938805675
+    second: NPC_1_sacrificing_38
+  - first:
+      213: 6174458447309405434
+    second: NPC_1_sacrificing_39
+  - first:
+      213: 2199070747570369661
+    second: NPC_1_sacrificing_40
+  - first:
+      213: -2488061021673972991
+    second: NPC_1_sacrificing_41
+  - first:
+      213: 2244215528495896796
+    second: NPC_1_sacrificing_42
+  - first:
+      213: -960927534575522720
+    second: NPC_1_sacrificing_43
+  - first:
+      213: -2289923300981709953
+    second: NPC_1_sacrificing_44
+  - first:
+      213: 8416648554724101469
+    second: NPC_1_sacrificing_45
+  - first:
+      213: 8749250443232590327
+    second: NPC_1_sacrificing_46
+  - first:
+      213: -7700299528291556185
+    second: NPC_1_sacrificing_47
+  - first:
+      213: 3860774551676512683
+    second: NPC_1_sacrificing_48
+  - first:
+      213: 9149125341613159142
+    second: NPC_1_sacrificing_49
+  - first:
+      213: 8121231957340947132
+    second: NPC_1_sacrificing_50
+  - first:
+      213: -7097081081107852690
+    second: NPC_1_sacrificing_51
+  - first:
+      213: 717373458103327688
+    second: NPC_1_sacrificing_52
+  - first:
+      213: 1708824511422887368
+    second: NPC_1_sacrificing_53
+  - first:
+      213: -5760600836950286543
+    second: NPC_1_sacrificing_54
+  - first:
+      213: 6610270737086700776
+    second: NPC_1_sacrificing_55
+  - first:
+      213: -8517521520394639402
+    second: NPC_1_sacrificing_56
+  - first:
+      213: -2844490094285127412
+    second: NPC_1_sacrificing_57
+  - first:
+      213: -1235311897161810664
+    second: NPC_1_sacrificing_58
+  - first:
+      213: -4481567975544896384
+    second: NPC_1_sacrificing_59
+  - first:
+      213: -282676369413639815
+    second: NPC_1_sacrificing_60
+  - first:
+      213: 1722020484509578222
+    second: NPC_1_sacrificing_61
+  - first:
+      213: 1396226562597254539
+    second: NPC_1_sacrificing_62
+  - first:
+      213: -4488603378874709127
+    second: NPC_1_sacrificing_63
+  - first:
+      213: -7284832352997452226
+    second: NPC_1_sacrificing_64
+  - first:
+      213: 8017260362397823790
+    second: NPC_1_sacrificing_65
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d1a83b0fe398090800000000000000
+      internalID: -8031819256913322621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909ea58df7d272a80800000000000000
+      internalID: -8491768545269847799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03df95763ee1135b0800000000000000
+      internalID: -5390493316945412816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602921c9e511b4510800000000000000
+      internalID: 1534339196092846598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105112a303cad0480800000000000000
+      internalID: -8931293162872171263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680333870330cfca0800000000000000
+      internalID: -5981902698344927098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58edc61bd3aadc200800000000000000
+      internalID: 202004740247969413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c616a17393d046d70800000000000000
+      internalID: 9035361291800830316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cbab2c9be463ea0800000000000000
+      internalID: -5893436502624781203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8182967788ccce330800000000000000
+      internalID: 3741590276929038360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322e5f855e6fb07c0800000000000000
+      internalID: -4103915170517622237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c1cea2a359c9ce0800000000000000
+      internalID: -1397077707330937792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc927d99101d8710800000000000000
+      internalID: 1697030336790306035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9ccba86c3912270800000000000000
+      internalID: 8224016875495672294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a717435b792f3ca0800000000000000
+      internalID: -6035059365998291040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04fc9ed4a4aac7c0800000000000000
+      internalID: -4050243886849919989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcd8c988982f85c0800000000000000
+      internalID: -4211102490956342052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC_1_sacrificing_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc45671b7de83fb10800000000000000
+      internalID: 2014110515411178700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

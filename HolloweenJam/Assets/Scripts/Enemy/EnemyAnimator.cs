@@ -4,10 +4,16 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class EnemyAnimator : MonoBehaviour
 {
+    #region Fields
     [SerializeField] float minDistanceToAnimate = 0.5f;
+    [SerializeField] bool isMoving = false;
     Animator m_animator;
     AIPath aiPath;
+    AIDestinationSetter aiDestination;
+    Transform player;
+    #endregion
 
+    #region Callbacks
     void Awake () {
         MakeReferences();
     }
@@ -15,36 +21,52 @@ public class EnemyAnimator : MonoBehaviour
     void Update () {
         AnimateMovement();
     }
+    #endregion
 
     void MakeReferences () {
         m_animator = GetComponent<Animator>();
         aiPath = GetComponentInParent<AIPath>();
+        aiDestination = GetComponentInParent<AIDestinationSetter>();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void AnimateMovement () {
-        var velocityX = aiPath.velocity.x;
-        var velocityY = aiPath.velocity.y;
-        if (Vector3.Distance(GetComponentInParent<AIDestinationSetter>().target.position, transform.position) > minDistanceToAnimate) {
-            if (velocityX > 0f && velocityX > Mathf.Abs(velocityY)) {
+        if (aiDestination.target == player && !isMoving)
+            Move();
+
+        var direction = (player.position - transform.position).normalized;
+        if (isMoving) {
+            if (direction.x > 0f && direction.x > Mathf.Abs(direction.y)) {
                 m_animator.Play("MoveRight");
             }
-            if (velocityY > 0f && velocityY > Mathf.Abs(velocityX)) {
+            if (direction.y > 0f && direction.y > Mathf.Abs(direction.x)) {
                 m_animator.Play("MoveUp");
             }
-            if (velocityX < 0f && Mathf.Abs(velocityX) > Mathf.Abs(velocityY)) {
+            if (direction.x < 0f && Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {
                 m_animator.Play("MoveLeft");
             }
-            if (velocityY < 0f && Mathf.Abs(velocityY) > Mathf.Abs(velocityX)) {
+            if (direction.y < 0f && Mathf.Abs(direction.y) > Mathf.Abs(direction.x)) {
                 m_animator.Play("MoveDown");
             }
         }
     }
 
+    void Move () {
+        isMoving = true;
+        m_animator.SetTrigger("Move");
+    }
+
+    public void Idle() {
+        isMoving = false;
+        m_animator.SetTrigger("Idle");
+    }
+
+    // Called by EnemyHealthAndTrigger
     public void Damage () {
         m_animator.SetTrigger("Damage");
     }
 
-    void OnDisable () {
+    public void Die () {
         m_animator.SetTrigger("Died");
     }
 }

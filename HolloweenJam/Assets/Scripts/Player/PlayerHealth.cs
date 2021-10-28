@@ -3,9 +3,24 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    #region Fields
     [SerializeField] int health = 5;
     [SerializeField] float recoveryTime = 1f;
+    [SerializeField] GameObject gun;
     public bool isRecovering = false;
+
+    PlayerAnimator m_animator;
+    #endregion
+
+    #region Callbacks
+    void Awake () {
+        MakeReferences();
+    }
+    #endregion
+
+    void MakeReferences () {
+        m_animator = GetComponentInChildren<PlayerAnimator>();
+    }
 
     public void Damage (int damage) {
         if (!isRecovering) {
@@ -14,8 +29,8 @@ public class PlayerHealth : MonoBehaviour
                 health--;
             }
             else Die();
-            GetComponentInChildren<PlayerAnimator>().Damage();
-            Camera.main.GetComponent<CameraShake>().Shake(0.2f, 0.2f);
+            m_animator.Damage();
+            Camera.main.GetComponent<CameraShake>().Shake(0.15f, 0.15f);
         }
     }
 
@@ -26,6 +41,12 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void Die () {
-        Destroy(this.gameObject);
+        m_animator.Die();
+        Destroy(gun);
+        Destroy(m_animator);
+        Destroy(GetComponent<PlayerMovement>());
+        Destroy(GetComponent<PlayerInput>());
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(this);
     }
 }

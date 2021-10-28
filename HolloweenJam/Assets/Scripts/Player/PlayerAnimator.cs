@@ -11,6 +11,8 @@ public class PlayerAnimator : MonoBehaviour
 {
     #region Fields
     public Direction lastMoveDirection;
+    [SerializeField] Transform followerPos;
+    [SerializeField] Vector3[] followerPositions;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -31,8 +33,8 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update () {
         GetInput();
-        GunPositionFix();
         Animate();
+        FixFollowerPosition();
     }
     #endregion
 
@@ -112,11 +114,23 @@ public class PlayerAnimator : MonoBehaviour
         }
     }
 
-    void GunPositionFix () {
-        m_graphics.sortingOrder = lastMoveDirection == Direction.Up ? 2 : 0;
+    void FixFollowerPosition () {
+        if (lastMoveDirection == Direction.Up) {
+            followerPos.localPosition = followerPositions[0];
+        } else if (lastMoveDirection == Direction.Left) {
+            followerPos.localPosition = followerPositions[1];
+        } else if (lastMoveDirection == Direction.Down) {
+            followerPos.localPosition = followerPositions[2];
+        } else if (lastMoveDirection == Direction.Right) {
+            followerPos.localPosition = followerPositions[3];
+        }
     }
 
     public void Damage () {
         m_animator.SetTrigger("Damage");
+    }
+
+    public void Die () {
+        m_animator.SetTrigger("Die");
     }
 }

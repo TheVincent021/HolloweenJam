@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistanceToAnimate: 0.5
+  isMoving: 0
 --- !u!1 &3099918666203819331
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,14 +288,14 @@ MonoBehaviour:
   orientation: 1
   enableRotation: 0
   targetCompatibility: {fileID: 0}
-  maxAcceleration: 2.5
+  maxAcceleration: 5
   rotationSpeed: 360
   slowdownDistance: 0
   pickNextWaypointDist: 1
   endReachedDistance: 1.1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
+  whenCloseToDestination: 1
   constrainInsideGraph: 0
 --- !u!114 &3099918666382649668
 MonoBehaviour:
@@ -309,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 0}
+  target: {fileID: 3099918666382649665}
 --- !u!50 &2003502565
 Rigidbody2D:
   serializedVersion: 4

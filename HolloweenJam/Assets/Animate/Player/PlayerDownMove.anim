@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Detective_RightIdle
+  m_Name: PlayerDownMove
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1034910587257607746, guid: 67ebb1ae85d6d5e4dae6d4fce9ace1d9, type: 3}
+      value: {fileID: -3586937968074950596, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - time: 0.083333336
+      value: {fileID: 7245392736481523595, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - time: 0.16666667
+      value: {fileID: -1643518850277727491, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - time: 0.25
+      value: {fileID: -1829089444790173674, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1779023189895330657, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - time: 0.41666666
+      value: {fileID: 575890877508120800, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
     - time: 0.5
-      value: {fileID: -1034910587257607746, guid: 67ebb1ae85d6d5e4dae6d4fce9ace1d9, type: 3}
+      value: {fileID: -3586937968074950596, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +52,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1034910587257607746, guid: 67ebb1ae85d6d5e4dae6d4fce9ace1d9, type: 3}
-    - {fileID: -1034910587257607746, guid: 67ebb1ae85d6d5e4dae6d4fce9ace1d9, type: 3}
+    - {fileID: -3586937968074950596, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - {fileID: 7245392736481523595, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - {fileID: -1643518850277727491, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - {fileID: -1829089444790173674, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - {fileID: 1779023189895330657, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - {fileID: 575890877508120800, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
+    - {fileID: -3586937968074950596, guid: d2058a689dffd4f4b9f28b6797ba5ede, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
