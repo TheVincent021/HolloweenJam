@@ -43,6 +43,7 @@ public class FollowerHealth : MonoBehaviour, IHealth
         m_animator.Die();
         Destroy(m_animator);
         Destroy(GetComponent<FollowPlayer>());
+        Destroy(GetComponent<CircleCollider2D>());
         GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Below";
         GetComponent<AIDestinationSetter>().target = transform;
         Destroy(this);

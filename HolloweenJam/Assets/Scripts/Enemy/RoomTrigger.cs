@@ -24,7 +24,6 @@ public class RoomTrigger : MonoBehaviour
     void CheckToClose () {
         if (playerPassed && (GameObject.FindWithTag("Follower").GetComponent<FollowerHealth>() == null || followerPassed) && !isClosed) {
             isClosed = true;
-            AwakeEnemies();
             CloseDoors();
         }
     }
@@ -39,7 +38,7 @@ public class RoomTrigger : MonoBehaviour
 
     void AwakeEnemies () {
         foreach (var enemy in enemies) {
-            enemy.attack = true;
+            enemy.disabled = false;
         }
     }
 

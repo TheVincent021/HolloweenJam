@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public bool attack = false;
+    public bool disabled = false;
     [SerializeField] int damage = 1;
     [SerializeField] float attackRange = 0.2f;
     [SerializeField] Transform[] targets;
@@ -24,6 +25,12 @@ public class EnemyAttack : MonoBehaviour
         } else {
             currentTarget = transform;
             DisablePathfinding();
+        }
+    }
+
+    void OnTriggerEnter2D (Collider2D col) {
+        if ((col.CompareTag("Player") || col.CompareTag("Follower")) && !disabled) {
+            attack = true;
         }
     }
 

@@ -47,6 +47,7 @@ public class EnemyHealth : MonoBehaviour
     void Die () {
         m_animator.Die();
         Destroy(m_animator);
+        GetComponentInParent<EnemyAttack>().disabled = true;
         GetComponentInParent<EnemyAttack>().attack = false;
         transform.parent.gameObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Below";
         StartCoroutine(DestroyCollider());

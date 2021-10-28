@@ -36,16 +36,16 @@ public class FollowerAnimator : MonoBehaviour
         var velocityX = aiPath.velocity.x;
         var velocityY = aiPath.velocity.y;
         if (isMoving) {
-            if (velocityX > 0f && velocityX > Mathf.Abs(velocityY)) {
+            if (velocityX > 0.1f && velocityX > Mathf.Abs(velocityY)) {
                 m_animator.Play("MoveRight");
             }
-            if (velocityY > 0f && velocityY > Mathf.Abs(velocityX)) {
+            if (velocityY > 0.1f && velocityY > Mathf.Abs(velocityX)) {
                 m_animator.Play("MoveUp");
             }
-            if (velocityX < 0f && Mathf.Abs(velocityX) > Mathf.Abs(velocityY)) {
+            if (velocityX < -0.1f && Mathf.Abs(velocityX) > Mathf.Abs(velocityY)) {
                 m_animator.Play("MoveLeft");
             }
-            if (velocityY < 0f && Mathf.Abs(velocityY) > Mathf.Abs(velocityX)) {
+            if (velocityY < -0.1f && Mathf.Abs(velocityY) > Mathf.Abs(velocityX)) {
                 m_animator.Play("MoveDown");
             }
         }
