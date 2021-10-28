@@ -2,6 +2,7 @@ using System.Collections;
 using Pathfinding;
 using UnityEngine;
 
+
 public class EnemyHealth : MonoBehaviour
 {
     #region Fields
@@ -31,9 +32,18 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void Damage () {
-        if (health > 1) health--;
-        else Die();
+    void Damage ()
+    {
+        if (health > 1)
+        { 
+            health--;
+            PlayGhoulPain();
+        }
+        else
+        {
+            Die();
+            PlayGhoulDeath();
+        }
 
         m_animator.Damage();
     }
@@ -58,4 +68,14 @@ public class EnemyHealth : MonoBehaviour
         Destroy(GetComponentInParent<CircleCollider2D>());
         Destroy(this.gameObject);
     }
+
+    void PlayGhoulPain()
+{
+    SoundManager.instance.Play("Ghoul_Pain");
+}
+    void PlayGhoulDeath()
+{
+    SoundManager.instance.Play("Ghoul_Death");
+}
+
 }

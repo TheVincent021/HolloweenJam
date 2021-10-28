@@ -27,9 +27,14 @@ public class FollowerHealth : MonoBehaviour, IHealth
             if (health > 1) {
                 StartCoroutine(Recovery());
                 health--;
+                SoundManager.instance.Play("Follower_Pain");
             }
-            else Die();
-            m_animator.Damage();
+            else 
+            {
+                Die();
+                m_animator.Damage();
+                SoundManager.instance.Play("Follower_Death");
+             }
         }
     }
 
@@ -48,4 +53,6 @@ public class FollowerHealth : MonoBehaviour, IHealth
         GetComponent<AIDestinationSetter>().target = transform;
         Destroy(this);
     }
+        
+    
 }
