@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2915660429439404468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2915660429439404470}
+  - component: {fileID: 2915660429439404471}
+  m_Layer: 0
+  m_Name: _SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2915660429439404470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915660429439404468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.042737067, y: -0.066817686, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2915660429439404471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915660429439404468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39906d9ea2371b458556eb0f097c986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Reload
+    clip: {fileID: 8300000, guid: 52a950f607e4fdc43b428ac55486c039, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+  - name: Sacrifice
+    clip: {fileID: 8300000, guid: 3386d944cef972149986eed279900d42, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+  - name: Follower_Death
+    clip: {fileID: 8300000, guid: fbad20e2b0f8c3e41b3bc45489b9cc0a, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+  - name: Player_Death
+    clip: {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+  roundRobins:
+  - name: GunShots
+    clips:
+    - {fileID: 8300000, guid: 29a21b8eedffeab4eb57013364c1e411, type: 3}
+    - {fileID: 8300000, guid: c8788596b78ca25438891930bf9a4dfb, type: 3}
+    - {fileID: 8300000, guid: 5a07cedc450ab554fad6c4021726e3e5, type: 3}
+    - {fileID: 8300000, guid: c11a07c2006f40c44895274e022bd37f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Footsteps
+    clips:
+    - {fileID: 8300000, guid: c9909ab93401aa648abbbfbb0cda976b, type: 3}
+    - {fileID: 8300000, guid: 26833d2b0a41ae64ea64a85be1dc6dc9, type: 3}
+    - {fileID: 8300000, guid: 40fd32f567a80294a887e546ae1346a3, type: 3}
+    - {fileID: 8300000, guid: 6aaec71505e058b418cc6c2868b47ae4, type: 3}
+    - {fileID: 8300000, guid: 0a46ca4f9a5b0cc40bd129bd86db71a3, type: 3}
+    - {fileID: 8300000, guid: 68944e2a6a67af94f8be6e85e854a0f3, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: Ghoul_Pain
+    clips:
+    - {fileID: 8300000, guid: f6dc3b8ecfb55304faac60e89144598c, type: 3}
+    - {fileID: 8300000, guid: b59323317e3f1a04b8165963e1dd7eb4, type: 3}
+    - {fileID: 8300000, guid: 524fdac1cbc7c09428f810a7c7924f95, type: 3}
+    - {fileID: 8300000, guid: 68d7a8c27f5da4e44a34a255f54dc0d0, type: 3}
+    - {fileID: 8300000, guid: ff64200117abb29488e07b502712be2d, type: 3}
+    - {fileID: 8300000, guid: 06597ff948fdf3844a23b4b794575908, type: 3}
+    volume: 0.35
+    pitch: 1
+    source: {fileID: 0}
+  - name: Ghoul_Death
+    clips:
+    - {fileID: 8300000, guid: b8207a1c5f4c15f49a5e52bbb5965d95, type: 3}
+    - {fileID: 8300000, guid: 708d23c6131a02d419c7e41c4536fd3d, type: 3}
+    - {fileID: 8300000, guid: 2454b795071be9b44aeee82b40b7b185, type: 3}
+    - {fileID: 8300000, guid: 35802c354da196442a391b915cbde4d2, type: 3}
+    - {fileID: 8300000, guid: 3903a69f8e40d044ba2f189db661dba6, type: 3}
+    - {fileID: 8300000, guid: 619aefcfce5c79845890ccfe9bf2582e, type: 3}
+    volume: 0.35
+    pitch: 1
+    source: {fileID: 0}
+  - name: Player_Pain
+    clips:
+    - {fileID: 8300000, guid: 2dd5141a3829e3f46ac385eb49547ae3, type: 3}
+    - {fileID: 8300000, guid: 8152fb18a0521f1498a26eb6dc5009bb, type: 3}
+    - {fileID: 8300000, guid: a0117c3be51b4ca4386ec3e8d5c2579c, type: 3}
+    - {fileID: 8300000, guid: b008b4ca9ffd719479b9c5bba9ad5bed, type: 3}
+    - {fileID: 8300000, guid: 358ec9d978f493946a2d0d603a0473a4, type: 3}
+    - {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Follower_Pain
+    clips:
+    - {fileID: 8300000, guid: 2dd5141a3829e3f46ac385eb49547ae3, type: 3}
+    - {fileID: 8300000, guid: 8152fb18a0521f1498a26eb6dc5009bb, type: 3}
+    - {fileID: 8300000, guid: a0117c3be51b4ca4386ec3e8d5c2579c, type: 3}
+    - {fileID: 8300000, guid: b008b4ca9ffd719479b9c5bba9ad5bed, type: 3}
+    - {fileID: 8300000, guid: 358ec9d978f493946a2d0d603a0473a4, type: 3}
+    - {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
