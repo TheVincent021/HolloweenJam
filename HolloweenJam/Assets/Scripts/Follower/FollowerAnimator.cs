@@ -3,13 +3,17 @@ using UnityEngine;
 
 public class FollowerAnimator : MonoBehaviour
 {
+    #region Fields
     [SerializeField] bool isMoving = true;
 
-    Animator m_animator;
     Transform player;
+
+    Animator m_animator;
     AIDestinationSetter aiDestination;
     AIPath aiPath;
+    #endregion
 
+    #region Callbacks
     void Awake () {
         MakeReferences();
     }
@@ -17,10 +21,12 @@ public class FollowerAnimator : MonoBehaviour
     void Update () {
         AnimateMovement();
     }
+    #endregion
 
     void MakeReferences () {
-        m_animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
+
+        m_animator = GetComponent<Animator>();
         aiDestination = GetComponentInParent<AIDestinationSetter>();
         aiPath = GetComponentInParent<AIPath>();
     }
@@ -57,5 +63,14 @@ public class FollowerAnimator : MonoBehaviour
 
     public void Die () {
         m_animator.SetTrigger("Die");
+    }
+
+    public void Impale () {
+        m_animator.SetTrigger("Impale");
+    }
+
+    void OnDisable () {
+        Destroy(aiPath);
+        GetComponent<SpriteRenderer>().sortingLayerName = "Below";
     }
 }

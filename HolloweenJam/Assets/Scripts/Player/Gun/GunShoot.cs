@@ -7,7 +7,8 @@ public class GunShoot : MonoBehaviour
     public bool isReady = true;
     public bool isReloading = false;
     [SerializeField] Transform barrelEnd;
-    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject normalBullet;
+    [SerializeField] GameObject spreadBullet;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] float damage = 1f;
     [SerializeField] float fireRate = 0f;
@@ -16,6 +17,7 @@ public class GunShoot : MonoBehaviour
     [SerializeField] RoundRobin shotEffects;
 
     public int currentAmmo = 0;
+    GameObject bullet;
 
     void Start () {
         Initialization();
@@ -24,7 +26,10 @@ public class GunShoot : MonoBehaviour
     void Initialization () {
         PlayerInput.actions.Default.Shoot.performed += Shoot;
         PlayerInput.actions.Default.Reload.performed += Reload;
+
+        clipCapacity = PlayerStats.clipCapacity;
         currentAmmo = clipCapacity;
+        if (PlayerStats.spreadBullet) bullet = spreadBullet; else bullet = normalBullet;
     }
 
     void Shoot (InputAction.CallbackContext ctx) {
@@ -44,6 +49,7 @@ public class GunShoot : MonoBehaviour
         Camera.main.GetComponent<CameraShake>().Shake(0.1f, 0.1f);
         Instantiate(muzzleFlash, barrelEnd.position, barrelEnd.rotation);
         SoundManager.instance.Play("GunShots");
+        HUDManager.instance.PopBullet();
     }
 
     void Reload (InputAction.CallbackContext ctx) {
@@ -62,10 +68,16 @@ public class GunShoot : MonoBehaviour
             isReloading = true;
             SoundManager.instance.Play("Reload");
             yield return new WaitForSeconds(reloadTime);
+            HUDManager.instance.FillClip();
+            clipCapacity = PlayerStats.clipCapacity;
             currentAmmo = clipCapacity;
             isReady = true;
             isReloading = false;
         }
+    }
+
+    public void ChangeBullet () {
+        bullet = spreadBullet;
     }
 
     void OnDisable () {

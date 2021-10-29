@@ -30,6 +30,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "327275a2-683a-4ce0-8e0d-618049509257",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "MousePosition",
                     "type": "Value",
                     "id": "3b2c1aac-8474-4dd5-beed-dcd0a5eaf5f8",
@@ -179,6 +187,17 @@
                     "processors": "",
                     "groups": "Keyboard & Mouse",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "babed913-8d9a-4343-ae87-0ea4cb839be3",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

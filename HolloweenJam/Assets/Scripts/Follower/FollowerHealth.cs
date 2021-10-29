@@ -1,5 +1,4 @@
 using System.Collections;
-using Pathfinding;
 using UnityEngine;
 
 public class FollowerHealth : MonoBehaviour, IHealth
@@ -9,7 +8,7 @@ public class FollowerHealth : MonoBehaviour, IHealth
     [SerializeField] float recoveryTime = 1f;
     public bool isRecovering = false;
 
-    FollowerAnimator m_animator;
+    FollowerEventHandler eventHandler;
     #endregion
 
     #region Callbacks
@@ -19,24 +18,24 @@ public class FollowerHealth : MonoBehaviour, IHealth
     #endregion
 
     void MakeReferences () {
-        m_animator = GetComponentInChildren<FollowerAnimator>();
+        eventHandler = GetComponent<FollowerEventHandler>();
     }
 
-    public void Damage (int damage) {
+    public void Hit (int damage) {
         if (!isRecovering) {
             if (health > 1) {
-                StartCoroutine(Recovery());
-                health--;
-                m_animator.Damage();
-                SoundManager.instance.Play("Follower_Pain");
-            }
-            else 
-            {
+                Damage();
+            } else {
                 Die();
-                m_animator.Damage();
-                SoundManager.instance.Play("Follower_Death");
              }
         }
+    }
+
+    void Damage () {
+        health--;
+        StartCoroutine(Recovery());
+        // EVENT
+        eventHandler.Damage();
     }
 
     IEnumerator Recovery () {
@@ -46,14 +45,7 @@ public class FollowerHealth : MonoBehaviour, IHealth
     }
 
     public void Die () {
-        m_animator.Die();
-        Destroy(m_animator);
-        Destroy(GetComponent<FollowPlayer>());
-        Destroy(GetComponent<CircleCollider2D>());
-        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Below";
-        GetComponent<AIDestinationSetter>().target = transform;
+        eventHandler.Die(false);
         Destroy(this);
     }
-        
-    
 }

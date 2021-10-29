@@ -28,15 +28,17 @@ public class EnemyHealth : MonoBehaviour
     void OnTriggerEnter2D (Collider2D col) {
         if (col.CompareTag("Bullet")) {
             Damage();
+            if (!GetComponentInParent<EnemyAttack>().disabled)
+                GetComponentInParent<EnemyAttack>().attack = true;
             Knockback(col.transform.position);
         }
     }
 
     void Damage ()
     {
-        if (health > 1)
+        if (health - PlayerStats.damage > 0)
         { 
-            health--;
+            health -= PlayerStats.damage;
             PlayGhoulPain();
         }
         else
@@ -51,7 +53,7 @@ public class EnemyHealth : MonoBehaviour
     void Knockback (Vector3 contactPosition) {
         var forceDirection = contactPosition - GameObject.FindWithTag("Barrel").transform.position;
         forceDirection.Normalize();
-        GetComponentInParent<Rigidbody2D>().AddForce(forceDirection * 200f);
+        GetComponentInParent<Rigidbody2D>().AddForce(forceDirection * PlayerStats.bulletForce);
     }
 
     void Die () {

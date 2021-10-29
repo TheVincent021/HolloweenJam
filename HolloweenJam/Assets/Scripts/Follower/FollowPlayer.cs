@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
+    #region Fields
     [SerializeField] float stopDistance = 0.25f;
 
-    AIPath aiPath;
     AIDestinationSetter aiDestination;
     Transform player;
+    #endregion
 
+    #region Callbacks
     void Awake () {
         MakeReferences();
     }
@@ -16,9 +18,9 @@ public class FollowPlayer : MonoBehaviour
     void Update () {
         StopNearTarget();
     }
+    #endregion
 
     void MakeReferences () {
-        aiPath = GetComponent<AIPath>();
         aiDestination = GetComponent<AIDestinationSetter>();
         player = GameObject.FindWithTag("Player").transform;
     }
@@ -29,5 +31,9 @@ public class FollowPlayer : MonoBehaviour
         } else {
             aiDestination.target = player;
         }
+    }
+
+    void OnDisable () {
+        aiDestination.target = transform;
     }
 }

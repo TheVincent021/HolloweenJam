@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
@@ -16,15 +17,22 @@ public class PlayerHealth : MonoBehaviour, IHealth
     void Awake () {
         MakeReferences();
     }
+
+    void Start () {
+        Initialization();
+    }
     #endregion
 
     void MakeReferences () {
         m_animator = GetComponentInChildren<PlayerAnimator>();
     }
 
-    public void Damage (int damage) {
+    void Initialization () {
+        health = PlayerStats.health;
+    }
+
+    public void Hit (int damage) {
         if (!isRecovering) {
-            
             if (health > 1) {
                 StartCoroutine(Recovery());
                 health--;
@@ -32,6 +40,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
             }
             else Die();
             m_animator.Damage();
+            HUDManager.instance.DamagePlayer();
             Camera.main.GetComponent<CameraShake>().Shake(0.15f, 0.15f);
         }
     }
@@ -51,6 +60,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(this);
     }
+
+    public void Heal (int amount) {
+        health += amount;
+    }
+
     void PlayPlayerPain()
     {
         SoundManager.instance.Play("Player_Pain");

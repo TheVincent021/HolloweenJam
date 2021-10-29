@@ -57,7 +57,7 @@ public class EnemyAttack : MonoBehaviour
     void Attack () {
         if (currentTarget.GetComponent<IHealth>() != null) {
             if (Vector3.Distance(transform.position, currentTarget.position) <= attackRange)
-                currentTarget.GetComponent<IHealth>().Damage(damage);
+                currentTarget.GetComponent<IHealth>().Hit(damage);
         }
     }
 

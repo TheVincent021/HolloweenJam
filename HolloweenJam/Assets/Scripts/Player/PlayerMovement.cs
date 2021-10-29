@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     #region Fields
-    [SerializeField] float speed = 5f;
     [SerializeField] float stepDelay = 0.3f;
     Vector2 movement;
     float nextStep = 0f;
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void GetInput () {
-        movement = PlayerInput.actions.Default.Movement.ReadValue<Vector2>() * speed;
+        movement = PlayerInput.actions.Default.Movement.ReadValue<Vector2>() * PlayerStats.speed;
     }
 
     void ApplyMovement () {
