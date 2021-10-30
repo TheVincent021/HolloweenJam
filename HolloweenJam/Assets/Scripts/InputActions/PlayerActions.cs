@@ -215,6 +215,66 @@ public class @PlayerActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""InBetweenMenu"",
+            ""id"": ""22decc43-abfd-46f2-b797-d75e94db8e1f"",
+            ""actions"": [
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""f97f994f-dbe7-4d9b-b880-764bd6f5ac84"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""eceea58e-7e16-407a-95db-dd4e0b776123"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e5f67f4-2311-402a-b55a-ec9e46e553c8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c33ec5dc-67b0-4a28-b9c0-3ad2a7428d94"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22f24da6-a15d-4d37-b07d-ab71a8489145"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -243,6 +303,9 @@ public class @PlayerActions : IInputActionCollection, IDisposable
         m_Default_Reload = m_Default.FindAction("Reload", throwIfNotFound: true);
         m_Default_Interact = m_Default.FindAction("Interact", throwIfNotFound: true);
         m_Default_MousePosition = m_Default.FindAction("MousePosition", throwIfNotFound: true);
+        // InBetweenMenu
+        m_InBetweenMenu = asset.FindActionMap("InBetweenMenu", throwIfNotFound: true);
+        m_InBetweenMenu_Submit = m_InBetweenMenu.FindAction("Submit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -353,6 +416,39 @@ public class @PlayerActions : IInputActionCollection, IDisposable
         }
     }
     public DefaultActions @Default => new DefaultActions(this);
+
+    // InBetweenMenu
+    private readonly InputActionMap m_InBetweenMenu;
+    private IInBetweenMenuActions m_InBetweenMenuActionsCallbackInterface;
+    private readonly InputAction m_InBetweenMenu_Submit;
+    public struct InBetweenMenuActions
+    {
+        private @PlayerActions m_Wrapper;
+        public InBetweenMenuActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Submit => m_Wrapper.m_InBetweenMenu_Submit;
+        public InputActionMap Get() { return m_Wrapper.m_InBetweenMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InBetweenMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IInBetweenMenuActions instance)
+        {
+            if (m_Wrapper.m_InBetweenMenuActionsCallbackInterface != null)
+            {
+                @Submit.started -= m_Wrapper.m_InBetweenMenuActionsCallbackInterface.OnSubmit;
+                @Submit.performed -= m_Wrapper.m_InBetweenMenuActionsCallbackInterface.OnSubmit;
+                @Submit.canceled -= m_Wrapper.m_InBetweenMenuActionsCallbackInterface.OnSubmit;
+            }
+            m_Wrapper.m_InBetweenMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
+            }
+        }
+    }
+    public InBetweenMenuActions @InBetweenMenu => new InBetweenMenuActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -369,5 +465,9 @@ public class @PlayerActions : IInputActionCollection, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+    }
+    public interface IInBetweenMenuActions
+    {
+        void OnSubmit(InputAction.CallbackContext context);
     }
 }

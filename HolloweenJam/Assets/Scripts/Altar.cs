@@ -12,14 +12,14 @@ public class Altar : MonoBehaviour
     void OnTriggerEnter2D (Collider2D col) {
         if (col.CompareTag("Player")) {
             interactable = true;
-            PlayerInput.actions.Default.Interact.performed += Sacrifice;
+            InputManager.actions.Default.Interact.performed += Sacrifice;
         }
     }
 
     void OnTriggerExit2D (Collider2D col) {
         if (col.CompareTag("Player")) {
             interactable = false;
-            PlayerInput.actions.Default.Interact.performed -= Sacrifice;
+            InputManager.actions.Default.Interact.performed -= Sacrifice;
         }
     }
     #endregion
@@ -27,7 +27,7 @@ public class Altar : MonoBehaviour
     void Sacrifice (InputAction.CallbackContext ctx) {
         if (victim) {
             victim.Die(true);
-            HUDManager.instance.ActivateRandomBuff();
+            UIManager.instance.ActivateRandomBuff();
         } else
             Debug.Log("No victim to sacrifice!");
     }

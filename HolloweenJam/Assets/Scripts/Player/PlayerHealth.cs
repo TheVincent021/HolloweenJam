@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
             }
             else Die();
             m_animator.Damage();
-            HUDManager.instance.DamagePlayer();
+            UIManager.instance.DamagePlayer();
             Camera.main.GetComponent<CameraShake>().Shake(0.15f, 0.15f);
             
         }
@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Destroy(gun);
         Destroy(m_animator);
         Destroy(GetComponent<PlayerMovement>());
-        Destroy(GetComponent<PlayerInput>());
+        Destroy(GetComponent<InputManager>());
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(this);
         PlayPlayerDeath();

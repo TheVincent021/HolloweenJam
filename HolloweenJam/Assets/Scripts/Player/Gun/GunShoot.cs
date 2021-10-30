@@ -24,8 +24,8 @@ public class GunShoot : MonoBehaviour
     }
 
     void Initialization () {
-        PlayerInput.actions.Default.Shoot.performed += Shoot;
-        PlayerInput.actions.Default.Reload.performed += Reload;
+        InputManager.actions.Default.Shoot.performed += Shoot;
+        InputManager.actions.Default.Reload.performed += Reload;
 
         clipCapacity = PlayerStats.clipCapacity;
         currentAmmo = clipCapacity;
@@ -49,7 +49,7 @@ public class GunShoot : MonoBehaviour
         Camera.main.GetComponent<CameraShake>().Shake(0.1f, 0.1f);
         Instantiate(muzzleFlash, barrelEnd.position, barrelEnd.rotation);
         SoundManager.instance.Play("GunShots");
-        HUDManager.instance.PopBullet();
+        UIManager.instance.PopBullet();
     }
 
     public void ReloadCall () {
@@ -72,7 +72,7 @@ public class GunShoot : MonoBehaviour
             isReloading = true;
             SoundManager.instance.Play("Reload");
             yield return new WaitForSeconds(reloadTime);
-            HUDManager.instance.FillClip();
+            UIManager.instance.FillClip();
             clipCapacity = PlayerStats.clipCapacity;
             currentAmmo = clipCapacity;
             isReady = true;
@@ -85,7 +85,7 @@ public class GunShoot : MonoBehaviour
     }
 
     void OnDisable () {
-        PlayerInput.actions.Default.Shoot.performed -= Shoot;
-        PlayerInput.actions.Default.Reload.performed -= Reload;
+        InputManager.actions.Default.Shoot.performed -= Shoot;
+        InputManager.actions.Default.Reload.performed -= Reload;
     }
 }

@@ -29,23 +29,24 @@ public class FollowerEventHandler : MonoBehaviour
         followerAnimator.Damage();
         SoundManager.instance.Play("Follower_Pain");
 
-        HUDManager.instance.DamageFollower();
+        UIManager.instance.DamageFollower();
     }
 
     public void Die (bool sacrificed) {
 
         if (sacrificed) {
-            HUDManager.instance.RemoveAllFollowerHearts();
+            UIManager.instance.RemoveAllFollowerHearts();
             followerAnimator.Impale();
             SoundManager.instance.Play("Sacrifice");
         } else {
-            HUDManager.instance.DamageFollower();
+            UIManager.instance.DamageFollower();
             followerAnimator.Die();
             SoundManager.instance.Play("Follower_Death");
         }
 
         Destroy(followerAnimator);
         Destroy(followPlayer);
+        Destroy(followerHealth);
         Destroy(GetComponent<CircleCollider2D>());
 
         Destroy(this);

@@ -1,26 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class HUDManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject defaultPanel;
+    [SerializeField] GameObject HUDPanel;
+    [SerializeField] GameObject statsPanel;
+    [SerializeField] TextMeshProUGUI savedPeopleNumber;
     [SerializeField] List<BuffScreen> buffScreens;
     [SerializeField] List<GameObject> playerHearts;
     [SerializeField] List<GameObject> followerHearts;
     [SerializeField] List<GameObject> bullets;
 
-    public static HUDManager instance;
+    public static UIManager instance;
 
     void Awake () {
         Singleton();
     }
 
+    void Update () {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Singleton () {
-        if (HUDManager.instance != null && HUDManager.instance != this)
+        if (UIManager.instance != null && UIManager.instance != this)
             Destroy(this.gameObject);
         else
-            HUDManager.instance = this;
+            UIManager.instance = this;
+    }
+
+    public void FadeOut () {
+        GameObject.FindWithTag("FadePanel").GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
     public void DamagePlayer () {
@@ -64,12 +75,21 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-    public void DisableDefaultPanel () {
-        defaultPanel.SetActive(false);
+    public void DisableHUDPanel () {
+        HUDPanel.SetActive(false);
     }
 
-    public void EnableDefaultPanel () {
-        defaultPanel.SetActive(true);
+    public void EnableHUDPanel () {
+        HUDPanel.SetActive(true);
+    }
+
+    public void EnableStatsPanel () {
+        statsPanel.SetActive(true);
+        savedPeopleNumber.text = PlayerStats.followerSaved.ToString();
+    }
+
+    public void DisableStatsPanel () {
+        statsPanel.SetActive(false);
     }
 
     public void FillClip () {
@@ -79,8 +99,8 @@ public class HUDManager : MonoBehaviour
     }
 
     public void ActivateRandomBuff () {
-        DisableDefaultPanel();
-        PlayerInput.actions.Default.Disable();
+        DisableHUDPanel();
+        InputManager.actions.Default.Disable();
         StartCoroutine(ActiveRandomBuffDelayed(4f));
     }
 
@@ -88,5 +108,6 @@ public class HUDManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         int random = Random.Range(0, buffScreens.Count);
         buffScreens[random].Activate();
+        buffScreens.RemoveAt(random);
     }
 }

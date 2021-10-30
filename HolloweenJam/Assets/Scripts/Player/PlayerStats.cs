@@ -1,23 +1,20 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    public static int currentLevel = 1;
+    public static int followerSaved = 0;
     public static int health = 3;
     public static int damage = 1;
     public static int clipCapacity = 6;
     public static float speed = 3f;
-    public static float bulletForce = 500f;
+    public static float bulletForce = 750f;
     public static bool spreadBullet = false;
-
-    void Update () {
-        DontDestroyOnLoad(this.gameObject);
-    }
 
     public void HealthBuff () {
         health += 1;
         GameObject.FindObjectOfType<PlayerHealth>().Heal(1);
-        HUDManager.instance.HealPlayer();
+        UIManager.instance.HealPlayer();
     }
 
     public void DamageBuff () {
@@ -38,11 +35,11 @@ public class PlayerStats : MonoBehaviour
 
     public void SpeedBuff () {
         Debug.Log("Speed Buffed!");
-        speed += 1f;
+        speed += 0.6f;
         Debug.Log("Current speed: " + speed);
     }
 
     public void BulletForceBuff () {
-        bulletForce += 400f;
+        bulletForce += 750f;
     }
 }

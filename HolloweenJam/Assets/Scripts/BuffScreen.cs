@@ -19,8 +19,8 @@ public class BuffScreen : MonoBehaviour
     }
 
     public void Deactive () {
-        PlayerInput.actions.Default.Enable();
-        HUDManager.instance.EnableDefaultPanel();
+        InputManager.actions.Default.Enable();
+        UIManager.instance.EnableHUDPanel();
         positionLerp.SetTargetPosition(positions[0]);
     }
 }

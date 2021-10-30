@@ -13,11 +13,15 @@ public class SoundManager : MonoBehaviour
         SetupRobins();
     }
 
+    void Update () {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Singleton () {
-        if (SoundManager.instance == null) {
-            SoundManager.instance = this;
-        } else if (SoundManager.instance != this) {
+        if (SoundManager.instance != null && SoundManager.instance != this) {
             Destroy(this.gameObject);
+        } else {
+            SoundManager.instance = this;
         }
     }
 

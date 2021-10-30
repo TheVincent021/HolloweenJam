@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void GetInput () {
-        movement = PlayerInput.actions.Default.Movement.ReadValue<Vector2>() * PlayerStats.speed;
+        movement = InputManager.actions.Default.Movement.ReadValue<Vector2>() * PlayerStats.speed;
     }
 
     void ApplyMovement () {

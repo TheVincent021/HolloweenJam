@@ -234,7 +234,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.35}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.2718976
 --- !u!50 &2003502565
 Rigidbody2D:
   serializedVersion: 4
@@ -283,7 +283,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: 2
+    value: 1
 --- !u!114 &3099918666382649670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   attack: 0
   disabled: 0
   damage: 1
-  attackRange: 0.5
+  attackRange: 0.7
   targets:
   - {fileID: 0}
   - {fileID: 0}

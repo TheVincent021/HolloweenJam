@@ -40,7 +40,7 @@ public class GunAnimator : MonoBehaviour
     }
 
     void Initialization () {
-        PlayerInput.actions.Default.Shoot.performed += TriggerShoot;
+        InputManager.actions.Default.Shoot.performed += TriggerShoot;
     }
 
     void Animate () {
@@ -75,6 +75,6 @@ public class GunAnimator : MonoBehaviour
     }
 
     void OnDisable () {
-        PlayerInput.actions.Default.Shoot.performed -= TriggerShoot;
+        InputManager.actions.Default.Shoot.performed -= TriggerShoot;
     }
 }

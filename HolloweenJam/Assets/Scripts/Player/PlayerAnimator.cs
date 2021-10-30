@@ -42,7 +42,7 @@ public class PlayerAnimator : MonoBehaviour
     }
 
     void GetInput () {
-        movement = PlayerInput.actions.Default.Movement.ReadValue<Vector2>();
+        movement = InputManager.actions.Default.Movement.ReadValue<Vector2>();
         mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     }
 
