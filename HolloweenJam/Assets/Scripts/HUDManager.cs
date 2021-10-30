@@ -24,13 +24,30 @@ public class HUDManager : MonoBehaviour
     }
 
     public void DamagePlayer () {
-        Destroy(playerHearts[playerHearts.Count - 1]);
-        playerHearts.RemoveAt(playerHearts.Count - 1);
+        for (int i = playerHearts.Count - 1; i > -1; i--) {
+            if (playerHearts[i].activeSelf == true) {
+                playerHearts[i].SetActive(false);
+                return;
+            }
+        }
+    }
+
+    public void HealPlayer () {
+        for (int i = playerHearts.Count - 1; i > -1; i--) {
+            if (playerHearts[i].activeSelf == true) {
+                playerHearts[i+1].SetActive(true);
+                return;
+            }
+        }
     }
 
     public void DamageFollower () {
-        Destroy(followerHearts[followerHearts.Count - 1]);
-        followerHearts.RemoveAt(followerHearts.Count - 1);
+        for (int i = followerHearts.Count - 1; i > -1; i--) {
+            if (followerHearts[i].activeSelf == true) {
+                followerHearts[i].SetActive(false);
+                return;
+            }
+        }
     }
 
     public void RemoveAllFollowerHearts () {
@@ -56,8 +73,9 @@ public class HUDManager : MonoBehaviour
     }
 
     public void FillClip () {
-        foreach (var bullet in bullets)
-            bullet.SetActive(true);
+        for (int i = 0; i < PlayerStats.clipCapacity; i++) {
+            bullets[i].SetActive(true);
+        }
     }
 
     public void ActivateRandomBuff () {

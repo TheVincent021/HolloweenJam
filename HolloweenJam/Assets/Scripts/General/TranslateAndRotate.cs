@@ -8,7 +8,7 @@ public class TranslateAndRotate : MonoBehaviour {
     #endregion
 
     #region Callbacks
-    void Update () {
+    void FixedUpdate () {
         PositionUpdate();
         RotationUpdate();
     }

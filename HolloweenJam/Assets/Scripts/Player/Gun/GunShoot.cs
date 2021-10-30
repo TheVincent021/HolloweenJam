@@ -52,6 +52,10 @@ public class GunShoot : MonoBehaviour
         HUDManager.instance.PopBullet();
     }
 
+    public void ReloadCall () {
+        StartCoroutine(StartReload());
+    }
+
     void Reload (InputAction.CallbackContext ctx) {
         StartCoroutine(StartReload());
     }
@@ -63,7 +67,7 @@ public class GunShoot : MonoBehaviour
     }
 
     IEnumerator StartReload() {
-        if (isReady == true && currentAmmo < clipCapacity) {
+        if (isReady == true && currentAmmo < PlayerStats.clipCapacity) {
             isReady = false;
             isReloading = true;
             SoundManager.instance.Play("Reload");

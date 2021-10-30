@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     public static int damage = 1;
     public static int clipCapacity = 6;
     public static float speed = 3f;
-    public static float bulletForce = 300f;
+    public static float bulletForce = 500f;
     public static bool spreadBullet = false;
 
     void Update () {
@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     public void HealthBuff () {
         health += 1;
         GameObject.FindObjectOfType<PlayerHealth>().Heal(1);
+        HUDManager.instance.HealPlayer();
     }
 
     public void DamageBuff () {
@@ -27,6 +28,7 @@ public class PlayerStats : MonoBehaviour
 
     public void ClipCapacityBuff () {
         clipCapacity += 3;
+        GameObject.FindObjectOfType<GunShoot>().ReloadCall();
     }
 
     public void ShotgunBulletBuff () {
@@ -35,10 +37,12 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void SpeedBuff () {
+        Debug.Log("Speed Buffed!");
         speed += 1f;
+        Debug.Log("Current speed: " + speed);
     }
 
     public void BulletForceBuff () {
-        bulletForce += 250f;
+        bulletForce += 400f;
     }
 }

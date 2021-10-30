@@ -37,7 +37,8 @@ public class EnemyHealth : MonoBehaviour
     void Damage ()
     {
         if (health - PlayerStats.damage > 0)
-        { 
+        {
+            Debug.Log(health + " - " + PlayerStats.damage);
             health -= PlayerStats.damage;
             PlayGhoulPain();
         }
