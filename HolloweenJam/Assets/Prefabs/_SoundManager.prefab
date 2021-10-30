@@ -46,28 +46,53 @@ MonoBehaviour:
   sounds:
   - name: Reload
     clip: {fileID: 8300000, guid: 52a950f607e4fdc43b428ac55486c039, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
-  - name: Sacrifice
-    clip: {fileID: 8300000, guid: 3386d944cef972149986eed279900d42, type: 3}
-    volume: 1
-    pitch: 1
-    isLoop: 0
-    source: {fileID: 0}
-  - name: Follower_Death
-    clip: {fileID: 8300000, guid: fbad20e2b0f8c3e41b3bc45489b9cc0a, type: 3}
-    volume: 1
-    pitch: 1
-    isLoop: 0
-    source: {fileID: 0}
+    bypassListenerEffects: 0
   - name: Player_Death
+    clip: {fileID: 8300000, guid: 9e55fd4a7bc1cd044a59e75b52b9297f, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 0
+  - name: Follower_Death
+    clip: {fileID: 8300000, guid: d821d216fa89af5488070eacda298be8, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 0
+  - name: Follower_Sacrifice
+    clip: {fileID: 8300000, guid: 117eae1fb8cca2e47ad5d78721901435, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 0
+  - name: Stinger_Sacrifice
+    clip: {fileID: 8300000, guid: 079968da0b1abb14eb82679fb402b861, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Stinger_PlayerDeath
+    clip: {fileID: 8300000, guid: 63d61b79255e4cd4ea29fb7a9fede321, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Stinger_FollowerDeath
     clip: {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
     volume: 1
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
+    bypassListenerEffects: 1
   roundRobins:
   - name: GunShots
     clips:
@@ -108,7 +133,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 35802c354da196442a391b915cbde4d2, type: 3}
     - {fileID: 8300000, guid: 3903a69f8e40d044ba2f189db661dba6, type: 3}
     - {fileID: 8300000, guid: 619aefcfce5c79845890ccfe9bf2582e, type: 3}
-    volume: 0.35
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: Player_Pain
