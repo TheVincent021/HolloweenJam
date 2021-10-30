@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
             m_animator.Damage();
             HUDManager.instance.DamagePlayer();
             Camera.main.GetComponent<CameraShake>().Shake(0.15f, 0.15f);
+            
         }
     }
 
@@ -59,6 +60,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Destroy(GetComponent<PlayerInput>());
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(this);
+        PlayPlayerDeath();
     }
 
     public void Heal (int amount) {
@@ -68,5 +70,10 @@ public class PlayerHealth : MonoBehaviour, IHealth
     void PlayPlayerPain()
     {
         SoundManager.instance.Play("Player_Pain");
+    }
+    void PlayPlayerDeath()
+    {
+        SoundManager.instance.Play("Player_Death");
+        SoundManager.instance.Play("Stinger_PlayerDeath");
     }
 }

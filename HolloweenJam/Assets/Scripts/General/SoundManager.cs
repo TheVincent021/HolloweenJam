@@ -28,6 +28,7 @@ public class SoundManager : MonoBehaviour
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.isLoop;
+            sound.source.bypassListenerEffects = sound.bypassListenerEffects;
         }
     }
 
@@ -93,6 +94,7 @@ public class Sound {
 
     public bool isLoop = false;
     public AudioSource source;
+    public bool bypassListenerEffects;
 }
 
 [System.Serializable]
