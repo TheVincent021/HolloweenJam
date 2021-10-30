@@ -37,7 +37,8 @@ public class FollowerEventHandler : MonoBehaviour
         if (sacrificed) {
             UIManager.instance.RemoveAllFollowerHearts();
             followerAnimator.Impale();
-            SoundManager.instance.Play("Sacrifice");
+            SoundManager.instance.Play("Stinger_Sacrifice");
+            SoundManager.instance.Play("Follower_Sacrifice");
         } else {
             UIManager.instance.DamageFollower();
             followerAnimator.Die();

@@ -36,6 +36,7 @@ public class FollowerHealth : MonoBehaviour, IHealth
         StartCoroutine(Recovery());
         // EVENT
         eventHandler.Damage();
+        PlayFollowerPain();
     }
 
     IEnumerator Recovery () {
@@ -47,5 +48,15 @@ public class FollowerHealth : MonoBehaviour, IHealth
     public void Die () {
         eventHandler.Die(false);
         Destroy(this);
+    }
+
+    public void PlayFollowerPain()
+    {
+        SoundManager.instance.Play("Follower_Pain");
+    }
+    public void PlayFollowerDeath()
+    {
+        SoundManager.instance.Play("Follower_Death");
+        SoundManager.instance.Play("Stinger_FollowerDeath");
     }
 }
