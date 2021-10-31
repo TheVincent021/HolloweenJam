@@ -19663,6 +19663,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_DecayTime
+      value: 2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReverbLevel
+      value: 503
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReverbPreset
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReflectionsDelay
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReflectionsLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8294543924474817843, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
       propertyPath: m_Name
       value: CameraHolder

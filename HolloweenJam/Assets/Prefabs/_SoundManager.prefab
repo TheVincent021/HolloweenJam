@@ -122,15 +122,15 @@ MonoBehaviour:
     source: {fileID: 0}
     bypassListenerEffects: 1
   - name: Music_HighSacrificeStart
-    clip: {fileID: 8300000, guid: 240273f243534e64691ec00eb58f1558, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 175347b3d41f6ee4a9a662620d4e43ce, type: 3}
+    volume: 0.8
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
     bypassListenerEffects: 1
   - name: Music_HighSacrificeLoop
-    clip: {fileID: 8300000, guid: d3b458ca7a21b8647a0466f175fb2630, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 769be2b1bf18bf743a15f83dbe1be92c, type: 3}
+    volume: 0.8
     pitch: 1
     isLoop: 1
     source: {fileID: 0}

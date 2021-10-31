@@ -15174,6 +15174,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2915660429439404471, guid: 43ee622d81a49504cbcbdffa4f18d27c, type: 3}
+      propertyPath: sounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 175347b3d41f6ee4a9a662620d4e43ce, type: 3}
+    - target: {fileID: 2915660429439404471, guid: 43ee622d81a49504cbcbdffa4f18d27c, type: 3}
+      propertyPath: sounds.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 769be2b1bf18bf743a15f83dbe1be92c, type: 3}
+    - target: {fileID: 2915660429439404471, guid: 43ee622d81a49504cbcbdffa4f18d27c, type: 3}
+      propertyPath: sounds.Array.data[11].volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915660429439404471, guid: 43ee622d81a49504cbcbdffa4f18d27c, type: 3}
+      propertyPath: sounds.Array.data[12].volume
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ee622d81a49504cbcbdffa4f18d27c, type: 3}
 --- !u!4 &2005688646 stripped
@@ -15444,7 +15460,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8161242448239954190, guid: 33da8ec9cfcd4f0479914c82e8980536, type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAMAbIexgI7dFcQIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxwZC4t5aQpIckTEgnF1+EtcYaZMmjjwDJ8N+7km3s0BPLvv14+3blL8KlqSG3Sj9ozp4UA/JzRLxNfox68BGOdKfkhn9CF/POmS19EA0xr9Ryhf7YpxlVgdU8/yV3wgdH6HSSF0pXK7aDpTLWoLugwgBCWlmfLdH1NSJH/BmnPuWE1vTGW59opdHojGYO0oLuQ2eT22mS3qbzRZsxnk2SeRTF02ncZs4ns0UyS+PVOLoNNZzMBa1qYH6gQamuRBJPkhAocdg2Jpp4NFdCcNNyJfZUBy02dQkavBiMUxw98PPdS+C70voxhrkvRWHAtrpoerrjGhVsipLfqpG1ombfUPugwvk2Dfem5NN/6DgOcKFV9dh1jSPfwZY837/SU06NHag+dN99p+3kgYo93Qp4L0E+qwetnGQIWu18qjMwvev/XgZblpDve39D9crp6l7wbsndiv0M5zD7cSl4tQ2yJ41jI1QQO1wGaFzMHyQc7sa0JdDrWfw18EZ3wwNrgXuujUWonVJ6elvltA8lq6CZn8bZpdISgrslXYOkwp7WWMZeL/AKG7S9Qu6pf0pt8xbrXshVSnD38VF0Ba3V4bIsU6rDE5jyxVnBJfSkPfCMOi2VlM19DTXp0jZOFzQfpO0cZ99Pi2wLfExJkeb4qm4iiMZzRoFuF0mSxkkOC0rC7XGJc1Kxboi28uDWZF9c4p35imtqy4JLBvjdoXU4eKbp4YF/VmqgO5eF2uQaQL40ZS7sQWMnfJlsxTiqtAFruQxLJ18ZESrfA8suhbIw7upoNc36Khmp+Yey3pORZfiuZORMzv8AUEsDBBQAAAgIAMAbIezyRieYbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSUpqRkaFJmmWygaGRuUGqga5pSmJqYpKZiYmloUlyqlmiUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAMAbIexgI7dFcQIAABYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAMAbIezyRieYbQAAAHgAAAAJACQAAAAAAAAAAAAAAL4CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
+      value: UEsDBBQAAAgIAAAIIexgI7dFcQIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxwZC4t5aQpIckTEgnF1+EtcYaZMmjjwDJ8N+7km3s0BPLvv14+3blL8KlqSG3Sj9ozp4UA/JzRLxNfox68BGOdKfkhn9CF/POmS19EA0xr9Ryhf7YpxlVgdU8/yV3wgdH6HSSF0pXK7aDpTLWoLugwgBCWlmfLdH1NSJH/BmnPuWE1vTGW59opdHojGYO0oLuQ2eT22mS3qbzRZsxnk2SeRTF02ncZs4ns0UyS+PVOLoNNZzMBa1qYH6gQamuRBJPkhAocdg2Jpp4NFdCcNNyJfZUBy02dQkavBiMUxw98PPdS+C70voxhrkvRWHAtrpoerrjGhVsipLfqpG1ombfUPugwvk2Dfem5NN/6DgOcKFV9dh1jSPfwZY837/SU06NHag+dN99p+3kgYo93Qp4L0E+qwetnGQIWu18qjMwvev/XgZblpDve39D9crp6l7wbsndiv0M5zD7cSl4tQ2yJ41jI1QQO1wGaFzMHyQc7sa0JdDrWfw18EZ3wwNrgXuujUWonVJ6elvltA8lq6CZn8bZpdISgrslXYOkwp7WWMZeL/AKG7S9Qu6pf0pt8xbrXshVSnD38VF0Ba3V4bIsU6rDE5jyxVnBJfSkPfCMOi2VlM19DTXp0jZOFzQfpO0cZ99Pi2wLfExJkeb4qm4iiMZzRoFuF0mSxkkOC0rC7XGJc1Kxboi28uDWZF9c4p35imtqy4JLBvjdoXU4eKbp4YF/VmqgO5eF2uQaQL40ZS7sQWMnfJlsxTiqtAFruQxLJ18ZESrfA8suhbIw7upoNc36Khmp+Yey3pORZfiuZORMzv8AUEsDBBQAAAgIAAAIIezyRieYbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSUpqRkaFJmmWygaGRuUGqga5pSmJqYpKZiYmloUlyqlmiUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIexgI7dFcQIAABYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIezyRieYbQAAAHgAAAAJACQAAAAAAAAAAAAAAL4CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
       objectReference: {fileID: 0}
     - target: {fileID: 8161242448239954191, guid: 33da8ec9cfcd4f0479914c82e8980536, type: 3}
       propertyPath: m_RootOrder
@@ -15503,6 +15519,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_DecayTime
+      value: 2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReverbLevel
+      value: 503
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReverbPreset
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReflectionsDelay
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294543923839982771, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
+      propertyPath: m_ReflectionsLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8294543923839982783, guid: 402e5c78b58b76e4c965b7738c1a4478, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.15686275
