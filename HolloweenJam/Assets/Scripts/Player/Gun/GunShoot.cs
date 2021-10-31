@@ -30,6 +30,8 @@ public class GunShoot : MonoBehaviour
         clipCapacity = PlayerStats.clipCapacity;
         currentAmmo = clipCapacity;
         if (PlayerStats.spreadBullet) bullet = spreadBullet; else bullet = normalBullet;
+
+        UIManager.instance.FillClip();
     }
 
     void Shoot (InputAction.CallbackContext ctx) {

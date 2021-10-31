@@ -35,6 +35,26 @@ public class UIManager : MonoBehaviour
         GameObject.FindWithTag("FadePanel").GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
+    public void ResetPlayerHearts() {
+        for (int i = playerHearts.Count-1; i > -1; i--) {
+            playerHearts[i].SetActive(false);
+        }
+
+        for (int i = 0; i < PlayerStats.health; i++) {
+            playerHearts[i].SetActive(true);
+        }
+    }
+
+    public void ResetFollowerHearts() {
+        for (int i = followerHearts.Count-1; i > -1; i--) {
+            playerHearts[i].SetActive(false);
+        }
+
+        for (int i = 0; i < PlayerStats.health-1; i++) {
+            followerHearts[i].SetActive(true);
+        }
+    }
+
     public void DamagePlayer () {
         for (int i = playerHearts.Count - 1; i > -1; i--) {
             if (playerHearts[i].activeSelf == true) {
@@ -48,6 +68,15 @@ public class UIManager : MonoBehaviour
         for (int i = playerHearts.Count - 1; i > -1; i--) {
             if (playerHearts[i].activeSelf == true) {
                 playerHearts[i+1].SetActive(true);
+                return;
+            }
+        }
+    }
+
+    public void HealFollower () {
+        for (int i = followerHearts.Count - 1; i > -1; i--) {
+            if (followerHearts[i].activeSelf == true) {
+                followerHearts[i+1].SetActive(true);
                 return;
             }
         }

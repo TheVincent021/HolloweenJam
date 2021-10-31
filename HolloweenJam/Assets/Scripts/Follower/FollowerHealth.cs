@@ -15,10 +15,19 @@ public class FollowerHealth : MonoBehaviour, IHealth
     void Awake () {
         MakeReferences();
     }
+
+    void Start () {
+        Initialization();
+    }
     #endregion
 
     void MakeReferences () {
         eventHandler = GetComponent<FollowerEventHandler>();
+    }
+
+    void Initialization () {
+        health = PlayerStats.health - 1;
+        UIManager.instance.ResetFollowerHearts();
     }
 
     public void Hit (int damage) {
@@ -37,6 +46,10 @@ public class FollowerHealth : MonoBehaviour, IHealth
         // EVENT
         eventHandler.Damage();
         PlayFollowerPain();
+    }
+
+    public void Heal (int amount) {
+        health += amount;
     }
 
     IEnumerator Recovery () {

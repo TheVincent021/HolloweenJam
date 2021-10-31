@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    #region Fields
+#region Fields
     public static PlayerActions actions;
     public static InputManager instance;
-    #endregion
+#endregion
 
-    #region Callbacks
+#region Callbacks
     void OnEnable () {
         Initialization();
     }
@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
     void Update () {
         DontDestroyOnLoad(this.gameObject);
     }
-    #endregion
+#endregion
 
     void Initialization () {
         actions = new PlayerActions();

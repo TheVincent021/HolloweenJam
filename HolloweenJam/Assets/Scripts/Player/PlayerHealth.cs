@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     void Initialization () {
         health = PlayerStats.health;
+        UIManager.instance.ResetPlayerHearts();
     }
 
     public void Hit (int damage) {

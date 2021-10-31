@@ -16,6 +16,11 @@ public class PlayerStats : MonoBehaviour
         health += 1;
         GameObject.FindObjectOfType<PlayerHealth>().Heal(1);
         UIManager.instance.HealPlayer();
+
+        if (GameObject.FindObjectOfType<FollowerHealth>() != null) {
+            GameObject.FindObjectOfType<FollowerHealth>().Heal(1);
+            UIManager.instance.HealFollower();
+        }
     }
 
     public void DamageBuff () {
