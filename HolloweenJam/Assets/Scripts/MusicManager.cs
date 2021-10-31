@@ -11,7 +11,7 @@ public class MusicManager : MonoBehaviour
             {
             if (PlayerStats.sacrificedCount < 1)
             {
-                PlayMusic("Music_HighSacrificeStart", "Music_HighSacrificeLoop");
+                PlayMusic("Music_NoSacrificeStart", "Music_NoSacrificeLoop");
             }
             if (PlayerStats.sacrificedCount > 0)
             {
