@@ -5,31 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Prototype/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Levels/FirstLevel.unity
-    guid: a94a7f3c250ae13459e112b67ee613e8
-<<<<<<< Updated upstream
-  - enabled: 0
-    path: Assets/Scenes/Second Level.unity
-    guid: 182aaa03ccfca0d4cba16dfb45b46312
-=======
-  - enabled: 1
-    path: Assets/Scenes/Levels/FirstLevel 1.unity
+    path: Assets/Scenes/FirstLevel.unity
     guid: 31aa3d2c907faaf41ad7c4c3ee76f573
   - enabled: 1
-    path: Assets/Scenes/Levels/FirstLevel 2.unity
-    guid: 49b3cd8d9d940064c99da337a2d925f3
+    path: Assets/Scenes/Second Level.unity
+    guid: 182aaa03ccfca0d4cba16dfb45b46312
   - enabled: 1
-    path: Assets/Scenes/Levels/FirstLevel 3.unity
-    guid: bc26ed806c81e5441bfc25657ef1120f
-  - enabled: 1
-    path: Assets/Scenes/Levels/FirstLevel 4.unity
-    guid: 92f5a47c0029d254cae1a4bfa0f49cfd
+    path: Assets/Scenes/Third level.unity
+    guid: 8d6b45e5899727843a11b938ae4a2fda
   - enabled: 1
     path: Assets/Scenes/StatsScene.unity
     guid: c95c486d234b7944e8e8aea0d1db35ef
->>>>>>> Stashed changes
   m_configObjects: {}
