@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 89127a3734971014e820b65287ce6582
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gunkie
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d4910103d5cd9c045b220c094a1001ad, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
