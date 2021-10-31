@@ -61,6 +61,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(this);
         PlayPlayerDeath();
+        GameObject.FindObjectOfType<MusicManager>().StopMusic();
     }
 
     public void Heal (int amount) {

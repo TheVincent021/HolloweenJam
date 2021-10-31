@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] Sound[] sounds;
     [SerializeField] RoundRobin[] roundRobins;
+
+    public bool isPlaying;
 
     public static SoundManager instance;
 

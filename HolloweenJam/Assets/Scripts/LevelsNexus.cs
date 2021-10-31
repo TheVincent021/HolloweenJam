@@ -28,6 +28,6 @@ public class LevelsNexus : MonoBehaviour
         UIManager.instance.DisableStatsPanel();
         UIManager.instance.EnableHUDPanel();
         InputManager.actions.Default.Enable();
-        SceneManager.LoadScene(PlayerStats.currentLevel-1);
+        SceneManager.LoadScene(PlayerStats.currentLevel);
     }
 }

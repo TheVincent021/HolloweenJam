@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject HUDPanel;
     [SerializeField] GameObject statsPanel;
     [SerializeField] TextMeshProUGUI savedPeopleNumber;
+    [SerializeField] TextMeshProUGUI currentLevelNumber;
     [SerializeField] List<BuffScreen> buffScreens;
     [SerializeField] List<GameObject> playerHearts;
     [SerializeField] List<GameObject> followerHearts;
@@ -86,6 +87,7 @@ public class UIManager : MonoBehaviour
     public void EnableStatsPanel () {
         statsPanel.SetActive(true);
         savedPeopleNumber.text = PlayerStats.followerSaved.ToString();
+        currentLevelNumber.text = PlayerStats.currentLevel.ToString();
     }
 
     public void DisableStatsPanel () {
