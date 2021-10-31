@@ -45,6 +45,7 @@ public class FollowerEventHandler : MonoBehaviour
             UIManager.instance.DamageFollower();
             followerAnimator.Die();
             SoundManager.instance.Play("Follower_Death");
+            SoundManager.instance.Play("Stinger_FollowerDeath");
         }
 
         Destroy(followerAnimator);

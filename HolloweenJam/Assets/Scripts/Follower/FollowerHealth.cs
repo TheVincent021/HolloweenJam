@@ -67,9 +67,5 @@ public class FollowerHealth : MonoBehaviour, IHealth
     {
         SoundManager.instance.Play("Follower_Pain");
     }
-    public void PlayFollowerDeath()
-    {
-        SoundManager.instance.Play("Follower_Death");
-        SoundManager.instance.Play("Stinger_FollowerDeath");
-    }
+    
 }
