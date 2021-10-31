@@ -52,6 +52,15 @@ public class SoundManager : MonoBehaviour
         FindSoundOrRobin(name, false);
     }
 
+    public Sound GetSound (string name) {
+        foreach (var sound in sounds) {
+            if (sound.name == name) {
+                return sound;
+            }
+        }
+        return null;
+    }
+
     void FindSoundOrRobin (string name, bool play) {
         foreach (var sound in sounds) {
             if (sound.name == name) {

@@ -5,14 +5,6 @@ using System.Collections.Generic;
 
 public class MusicManager : MonoBehaviour
 {
-
-    public static MusicManager instance;
-
-    void Awake()
-    {
-        Singleton();
-    }
-
     void Start()
     {
         if (PlayerStats.followerSaved < 1)
@@ -31,33 +23,16 @@ public class MusicManager : MonoBehaviour
             return;
     }
 
-    void Update()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
-    void Singleton()
-    {
-        if (MusicManager.instance != null && MusicManager.instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            MusicManager.instance = this;
-        }
-    }
-
     void PlayMusic(string start, string loop)
     {
-        SoundManager.Play(start);
-        StartCoroutine(PlayLoop(loop, start.length));
+        SoundManager.instance.Play(start);
+        StartCoroutine(PlayLoop(loop, SoundManager.instance.GetSound(start).clip.length));
     }
 
     IEnumerator PlayLoop(string loop, float delay)
     {
         yield return new WaitForSeconds(delay);
-        SoundManager.Play(loop);
+        SoundManager.instance.Play(loop);
     }
 
 
