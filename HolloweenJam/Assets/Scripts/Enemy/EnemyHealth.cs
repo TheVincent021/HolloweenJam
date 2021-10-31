@@ -64,6 +64,7 @@ public class EnemyHealth : MonoBehaviour
         GetComponentInParent<EnemyAttack>().attack = false;
         transform.parent.gameObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Below";
         StartCoroutine(DestroyCollider());
+        
     }
 
     IEnumerator DestroyCollider () {
@@ -78,6 +79,7 @@ public class EnemyHealth : MonoBehaviour
 
     void PlayGhoulDeath() {
         SoundManager.instance.Play("Ghoul_Death");
+        SoundManager.instance.Stop("Ghoul_Aggro");
     }
 
 }

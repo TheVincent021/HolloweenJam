@@ -59,8 +59,8 @@ MonoBehaviour:
     source: {fileID: 0}
     bypassListenerEffects: 0
   - name: Follower_Death
-    clip: {fileID: 8300000, guid: d821d216fa89af5488070eacda298be8, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 59c6916c734d6d64ba40b876941fdea8, type: 3}
+    volume: 0.76
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
@@ -80,19 +80,19 @@ MonoBehaviour:
     source: {fileID: 0}
     bypassListenerEffects: 1
   - name: Stinger_PlayerDeath
-    clip: {fileID: 8300000, guid: 63d61b79255e4cd4ea29fb7a9fede321, type: 3}
+    clip: {fileID: 8300000, guid: ffd13dfd1eae3e94fa447a31e3f75052, type: 3}
     volume: 1
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
     bypassListenerEffects: 1
   - name: Stinger_FollowerDeath
-    clip: {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 393e705d1be23d446b1e4a9252254093, type: 3}
+    volume: 0.4
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
-    bypassListenerEffects: 1
+    bypassListenerEffects: 0
   - name: Music_NoSacrificeStart
     clip: {fileID: 8300000, guid: 24dc46dde109a604f8eed47f715b903d, type: 3}
     volume: 1
@@ -198,6 +198,18 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 358ec9d978f493946a2d0d603a0473a4, type: 3}
     - {fileID: 8300000, guid: 1c826389b185a3b4a8baacb3add2f733, type: 3}
     volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Ghoul_Aggro
+    clips:
+    - {fileID: 8300000, guid: 2e4334f3f58a9aa478f8dcbedaba25f5, type: 3}
+    - {fileID: 8300000, guid: ae7ab9a80450cae4291af7c4e8fe376f, type: 3}
+    - {fileID: 8300000, guid: 14012917759138240a19c3a1f3e446e7, type: 3}
+    - {fileID: 8300000, guid: f0670d48d62f24e4f97471dfbef88412, type: 3}
+    - {fileID: 8300000, guid: a11020cb9a8e33d49aa935a5128e9b4d, type: 3}
+    - {fileID: 8300000, guid: b41736ea0c6481940a9e8ea6f547d928, type: 3}
+    - {fileID: 8300000, guid: 76c0c0d69ec7f674795a1512aed9ef07, type: 3}
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
   isPlaying: 0

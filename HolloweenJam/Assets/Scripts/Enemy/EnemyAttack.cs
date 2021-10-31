@@ -31,6 +31,7 @@ public class EnemyAttack : MonoBehaviour
     void OnTriggerEnter2D (Collider2D col) {
         if ((col.CompareTag("Player") || col.CompareTag("Follower")) && !disabled) {
             attack = true;
+            SoundManager.instance.Play("Ghoul_Aggro");
         }
     }
 
