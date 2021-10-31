@@ -18,7 +18,9 @@ public class ExitPoint : MonoBehaviour
         if (col.CompareTag("Player")) {
             canExit = false;
             InputManager.actions.Default.Interact.performed -= GoToNextLevel;
+            
         }
+
     }
 
     public void GoToNextLevel (InputAction.CallbackContext ctx) {
@@ -30,6 +32,7 @@ public class ExitPoint : MonoBehaviour
         UIManager.instance.DisableHUDPanel();
 
         StartCoroutine(LoadLevelsNexus());
+        GameObject.FindObjectOfType<MusicManager>().StopMusic();
     }
 
     IEnumerator LoadLevelsNexus () {

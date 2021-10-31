@@ -39,6 +39,8 @@ public class FollowerEventHandler : MonoBehaviour
             followerAnimator.Impale();
             SoundManager.instance.Play("Stinger_Sacrifice");
             SoundManager.instance.Play("Follower_Sacrifice");
+            GameObject.FindObjectOfType<MusicManager>().StopMusic();
+            PlayerStats.sacrificedCount += 1;
         } else {
             UIManager.instance.DamageFollower();
             followerAnimator.Die();

@@ -67,14 +67,14 @@ MonoBehaviour:
     bypassListenerEffects: 0
   - name: Follower_Sacrifice
     clip: {fileID: 8300000, guid: 117eae1fb8cca2e47ad5d78721901435, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
     bypassListenerEffects: 0
   - name: Stinger_Sacrifice
     clip: {fileID: 8300000, guid: 079968da0b1abb14eb82679fb402b861, type: 3}
-    volume: 0.5
+    volume: 0.7
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
@@ -91,6 +91,48 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Music_NoSacrificeStart
+    clip: {fileID: 8300000, guid: 24dc46dde109a604f8eed47f715b903d, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Music_NoSacrificeLoop
+    clip: {fileID: 8300000, guid: 1cee623e777e912479a8a3ec7044958e, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Music_MidSacrificeStart
+    clip: {fileID: 8300000, guid: 824e7651ac3f3604bb0570bc5cf29b03, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Music_MidSacrificeLoop
+    clip: {fileID: 8300000, guid: 9aa8b5aafa2a7e24ba2a6d12d557df5a, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Music_HighSacrificeStart
+    clip: {fileID: 8300000, guid: 240273f243534e64691ec00eb58f1558, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+    bypassListenerEffects: 1
+  - name: Music_HighSacrificeLoop
+    clip: {fileID: 8300000, guid: d3b458ca7a21b8647a0466f175fb2630, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 1
     source: {fileID: 0}
     bypassListenerEffects: 1
   roundRobins:
@@ -158,3 +200,4 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  isPlaying: 0

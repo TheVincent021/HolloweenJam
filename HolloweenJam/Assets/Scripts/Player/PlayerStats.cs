@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     public static float speed = 3f;
     public static float bulletForce = 750f;
     public static bool spreadBullet = false;
+    public static int sacrificedCount;
 
     public void HealthBuff () {
         health += 1;
