@@ -262,6 +262,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GameOver",
+            "id": "0ffc8e74-a547-46b1-bb4d-42d8c46d08c0",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "c5ce3350-502f-467e-b748-b3188badeab4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "be81c63b-3c7d-4ef3-a2c3-0631f9b5d54c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "95ca3b4f-7868-4141-bd85-2360c05c2e8a",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "465f22f0-b3c0-407d-99e3-6a079ff5a542",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6bcd1f61-4709-45b0-8ac5-c5c447ec1deb",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70804e86-5db1-4dee-b8e0-684c02c60a1e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

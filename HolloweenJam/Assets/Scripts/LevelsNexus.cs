@@ -10,10 +10,13 @@ public class LevelsNexus : MonoBehaviour
     }
 
     void Initialization () {
-        UIManager.instance.EnableStatsPanel();
-        InputManager.actions.InBetweenMenu.Enable();
-
-        InputManager.actions.InBetweenMenu.Submit.performed += GoToNextLevel;
+        if (PlayerStats.currentLevel != 5) {
+            UIManager.instance.EnableStatsPanel();
+            InputManager.actions.InBetweenMenu.Enable();
+            InputManager.actions.InBetweenMenu.Submit.performed += GoToNextLevel;
+        } else {
+            UIManager.instance.EnableGameOverPanel();
+        }
     }
 
     void GoToNextLevel (InputAction.CallbackContext ctx) {

@@ -275,6 +275,74 @@ public class PlayerActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GameOver"",
+            ""id"": ""0ffc8e74-a547-46b1-bb4d-42d8c46d08c0"",
+            ""actions"": [
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""c5ce3350-502f-467e-b748-b3188badeab4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""be81c63b-3c7d-4ef3-a2c3-0631f9b5d54c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""95ca3b4f-7868-4141-bd85-2360c05c2e8a"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""465f22f0-b3c0-407d-99e3-6a079ff5a542"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6bcd1f61-4709-45b0-8ac5-c5c447ec1deb"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70804e86-5db1-4dee-b8e0-684c02c60a1e"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -306,6 +374,10 @@ public class PlayerActions : IInputActionCollection, IDisposable
         // InBetweenMenu
         m_InBetweenMenu = asset.FindActionMap("InBetweenMenu", throwIfNotFound: true);
         m_InBetweenMenu_Submit = m_InBetweenMenu.FindAction("Submit", throwIfNotFound: true);
+        // GameOver
+        m_GameOver = asset.FindActionMap("GameOver", throwIfNotFound: true);
+        m_GameOver_Restart = m_GameOver.FindAction("Restart", throwIfNotFound: true);
+        m_GameOver_Quit = m_GameOver.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -449,6 +521,47 @@ public class PlayerActions : IInputActionCollection, IDisposable
         }
     }
     public InBetweenMenuActions @InBetweenMenu => new InBetweenMenuActions(this);
+
+    // GameOver
+    private readonly InputActionMap m_GameOver;
+    private IGameOverActions m_GameOverActionsCallbackInterface;
+    private readonly InputAction m_GameOver_Restart;
+    private readonly InputAction m_GameOver_Quit;
+    public struct GameOverActions
+    {
+        private @PlayerActions m_Wrapper;
+        public GameOverActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Restart => m_Wrapper.m_GameOver_Restart;
+        public InputAction @Quit => m_Wrapper.m_GameOver_Quit;
+        public InputActionMap Get() { return m_Wrapper.m_GameOver; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameOverActions set) { return set.Get(); }
+        public void SetCallbacks(IGameOverActions instance)
+        {
+            if (m_Wrapper.m_GameOverActionsCallbackInterface != null)
+            {
+                @Restart.started -= m_Wrapper.m_GameOverActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_GameOverActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_GameOverActionsCallbackInterface.OnRestart;
+                @Quit.started -= m_Wrapper.m_GameOverActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_GameOverActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_GameOverActionsCallbackInterface.OnQuit;
+            }
+            m_Wrapper.m_GameOverActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
+            }
+        }
+    }
+    public GameOverActions @GameOver => new GameOverActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -469,5 +582,10 @@ public class PlayerActions : IInputActionCollection, IDisposable
     public interface IInBetweenMenuActions
     {
         void OnSubmit(InputAction.CallbackContext context);
+    }
+    public interface IGameOverActions
+    {
+        void OnRestart(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

@@ -10,14 +10,14 @@ public class Altar : MonoBehaviour
 
     #region Callbacks
     void OnTriggerEnter2D (Collider2D col) {
-        if (col.CompareTag("Player")) {
+        if (col.CompareTag("Follower")) {
             interactable = true;
             InputManager.actions.Default.Interact.performed += Sacrifice;
         }
     }
 
     void OnTriggerExit2D (Collider2D col) {
-        if (col.CompareTag("Player")) {
+        if (col.CompareTag("Follower")) {
             interactable = false;
             InputManager.actions.Default.Interact.performed -= Sacrifice;
         }

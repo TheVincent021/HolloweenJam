@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject HUDPanel;
     [SerializeField] GameObject statsPanel;
+    [SerializeField] GameObject gameOverPanel;
     [SerializeField] TextMeshProUGUI savedPeopleNumber;
     [SerializeField] TextMeshProUGUI currentLevelNumber;
     [SerializeField] List<BuffScreen> buffScreens;
@@ -40,6 +41,8 @@ public class UIManager : MonoBehaviour
             playerHearts[i].SetActive(false);
         }
 
+        Debug.Log(PlayerStats.health);
+
         for (int i = 0; i < PlayerStats.health; i++) {
             playerHearts[i].SetActive(true);
         }
@@ -47,12 +50,24 @@ public class UIManager : MonoBehaviour
 
     public void ResetFollowerHearts() {
         for (int i = followerHearts.Count-1; i > -1; i--) {
-            playerHearts[i].SetActive(false);
+            followerHearts[i].SetActive(false);
         }
 
         for (int i = 0; i < PlayerStats.health-1; i++) {
             followerHearts[i].SetActive(true);
         }
+    }
+
+    public void EnableGameOverPanel () {
+        gameOverPanel.SetActive(true);
+        InputManager.actions.GameOver.Enable();
+        InputManager.actions.Default.Disable();
+        InputManager.actions.InBetweenMenu.Disable();
+    }
+
+    public void DisableGameOverPanel () {
+        gameOverPanel.SetActive(false);
+        InputManager.actions.GameOver.Disable();
     }
 
     public void DamagePlayer () {
@@ -93,7 +108,7 @@ public class UIManager : MonoBehaviour
 
     public void RemoveAllFollowerHearts () {
         foreach (var heart in followerHearts)
-            Destroy(heart);
+            heart.SetActive(false);
     }
 
     public void PopBullet () {

@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a6566e5c2c58641ace6dcb00c5bde3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 25
   damage: 1
-  attackRange: 0.9
+  attackRange: 1.2
 --- !u!1 &4904180602345987136
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4904180602345987136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.920888, y: -16.728313, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
@@ -232,7 +232,7 @@ MonoBehaviour:
   attack: 0
   disabled: 0
   damage: 1
-  attackRange: 1
+  attackRange: 1.2
   targets:
   - {fileID: 0}
   - {fileID: 0}
@@ -252,7 +252,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 100
+  m_Radius: 50
 --- !u!1 &4904180602819387936
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4904180602819387936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4904180602345987137}
@@ -324,7 +324,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

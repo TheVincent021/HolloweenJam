@@ -54,6 +54,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     }
 
     public void Die () {
+        UIManager.instance.EnableGameOverPanel();
         m_animator.Die();
         Destroy(gun);
         Destroy(m_animator);
