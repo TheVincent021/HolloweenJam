@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: 075a185660f86d24ea17f06a1de65082
+guid: b3929c09948db38458a22f990f2e3178
 TextureImporter:
   internalIDToNameTable:
+  - first:
+      213: 1013373689245819573
+    second: player_run_right_backwards_0
+  - first:
+      213: 7197703779957042781
+    second: player_run_right_backwards_1
+  - first:
+      213: 7202864419542260137
+    second: player_run_right_backwards_2
+  - first:
+      213: -3841645102999173123
+    second: player_run_right_backwards_3
+  - first:
+      213: -6963092387136339289
+    second: player_run_right_backwards_4
+  - first:
+      213: 285239683604816629
+    second: player_run_right_backwards_5
   - first:
       213: -4083656042137248183
     second: player_run_left_backwards_0
