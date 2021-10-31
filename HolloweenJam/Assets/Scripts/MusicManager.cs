@@ -9,20 +9,20 @@ public class MusicManager : MonoBehaviour
     {
         if (SoundManager.instance.isPlaying = true)
             {
+            if (PlayerStats.sacrificedCount >= 2)
+            {
+                PlayMusic("Music_HighSacrificeStart", "Music_HighSacrificeLoop");
+            }
+            else (PlayerStats.sacrificedCount >= 1)
+            {
+                PlayMusic("Music_MidSacrificeStart", "Music_MidSacrificeLoop");
+            }
             if (PlayerStats.sacrificedCount < 1)
             {
                 PlayMusic("Music_NoSacrificeStart", "Music_NoSacrificeLoop");
             }
-            if (PlayerStats.sacrificedCount > 0)
-            {
-                PlayMusic("Music_MidSacrificeStart", "Music_MidSacrificeLoop");
-            }
-            if (PlayerStats.sacrificedCount > 2)
-            {
-                PlayMusic("Music_HighSacrificeStart", "Music_HighSacrificeLoop");
-            }
-            else
-                return;
+            
+            
         }
     }
 
